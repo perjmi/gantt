@@ -22,6 +22,17 @@ systemmilestones = [
     }
 ]
 
+systemmilestones.append(
+    {
+        'complexity': 'hard',
+        'method':'option2',
+        'milestones': [
+            {'name': 'milestone1', 'duration': 15,'fte':3,'ftetype':'dev'},
+            {'name': 'milestone2', 'duration': 7,'fte':2,'ftetype':'test'}
+        ]
+    }
+)
+
 ressources = [
     {'ftetype':'dev','unitcostprday':1000,'availability':0.8,'ressourcename':'Developer1'},
     {'ftetype':'dev','unitcostprday':1000,'availability':1.0,'ressourcename':'Developer2'},
