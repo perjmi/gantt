@@ -245,9 +245,15 @@ def project():
     tasks = createtasks('2025-11-04', systems, systemmilestones, ressources)
     df = pd.DataFrame(tasks)
     
+    # Scale FTE so bars fill the vertical space with no gaps
+    n_tasks = len(df)
+    desired_bar_height = 0.3
+    scaling_factor = (n_tasks * desired_bar_height) / df["FTE"].sum()
+    df["FTE_scaled"] = df["FTE"] * scaling_factor
+
     fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", color="System", text="Milestone")
     fig.update_yaxes(autorange="reversed")
-    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, textfont_color="white", width=df["FTE"])
+    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, textfont_color="white", width=df["FTE_scaled"])
     fig.update_layout(
         title="Project Gantt Chart",
         showlegend=True
