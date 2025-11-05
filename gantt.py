@@ -239,12 +239,8 @@ def main():
     
     print("\nAll examples completed!")
 
-def project():
-    """Generate and display a Gantt chart for the defined project"""
-    print("Creating project Gantt chart...")
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources)
-    df = pd.DataFrame(tasks)
-    
+def plottasksonproject(df):
+    """Plot the Gantt chart for the project tasks DataFrame"""
     # Scale FTE so bars fill the vertical space with no gaps
     n_tasks = len(df)
     desired_bar_height = 0.3
@@ -259,6 +255,36 @@ def project():
         showlegend=True
     )
     fig.show()
+
+def plot_system_milestones(df):
+    """Plot system milestones: for each system, create bars for each milestone/resource with FTE as height"""
+    # Group by system, milestone, resource, get min(Start), max(Finish), sum(FTE)
+    milestone_df = df.groupby(["System", "Milestone", "Resource"]).agg({
+        "Start": "min",
+        "Finish": "max",
+        "FTE": "sum"
+    }).reset_index()
+
+    # Scale FTE so bars fill the vertical space per system
+    max_fte = milestone_df["FTE"].max()
+    milestone_df["FTE_scaled"] = milestone_df["FTE"] / max_fte * 0.3
+
+    fig = px.timeline(milestone_df, x_start="Start", x_end="Finish", y="System", color="Milestone", text="Resource")
+    fig.update_yaxes(autorange="reversed")
+    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, width=milestone_df["FTE_scaled"])
+    fig.update_layout(
+        title="System Milestones (FTE shown by bar height)",
+        showlegend=True
+    )
+    fig.show()
+
+def project():
+    """Generate and display a Gantt chart for the defined project"""
+    print("Creating project Gantt chart...")
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources)
+    df = pd.DataFrame(tasks)
+    plottasksonproject(df)
+    plot_system_milestones(df)
 
 if __name__ == "__main__":
     project()
