@@ -290,17 +290,33 @@ def main():
 
 def plottasksonproject(df):
     """Plot the Gantt chart for the project tasks DataFrame"""
-    # Scale FTE so bars fill the vertical space with no gaps
-    n_tasks = len(df)
-    desired_bar_height = 0.3
-    scaling_factor = (n_tasks * desired_bar_height) / df["FTE"].sum()
-    df["FTE_scaled"] = df["FTE"] * scaling_factor
+    # Scale FTE so bars have height proportional to FTE
+    max_fte = df["FTE"].max()
+    if max_fte > 0:
+        df["FTE_scaled"] = df["FTE"] / max_fte * 0.8
+    else:
+        df["FTE_scaled"] = 0.5
+    
+    print("\nFTE scaling for plottasksonproject:")
+    print(df[["Task", "Start", "Finish", "FTE", "FTE_scaled"]])
 
     fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", color="System", text="Milestone")
     fig.update_yaxes(autorange="reversed")
-    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, textfont_color="white", width=df["FTE_scaled"])
+    
+    # Set bar widths (vertical thickness) based on FTE_scaled
+    # We need to map each bar to its corresponding FTE_scaled value
+    fte_scaled_values = df["FTE_scaled"].tolist()
+    
+    # For each trace (grouped by System), we need to assign widths based on the data points
+    bar_index = 0
+    for trace in fig.data:
+        num_bars = len(trace.x)
+        trace.width = fte_scaled_values[bar_index:bar_index + num_bars]
+        bar_index += num_bars
+    
+    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, textfont_color="white")
     fig.update_layout(
-        title="Project Gantt Chart",
+        title="Project Gantt Chart (Bar height ∝ FTE)",
         showlegend=True
     )
     fig.show()
@@ -320,23 +336,13 @@ def plot_system_milestones(df):
         active = df[
             (df["Start"] <= start) & (df["Finish"] > start)
         ]
-        grouped = active.groupby("System").agg({
+        grouped = active.groupby(["System", "Milestone"]).agg({
             "FTE": "sum"
         }).reset_index()
         for _, row in grouped.iterrows():
-            system_active = active[active["System"] == row["System"]]
-            milestones = system_active["Milestone"].unique()
-            # For each milestone, decide if it's the first bar
-            milestone_texts = []
-            for milestone in milestones:
-                key = (row["System"], milestone)
-                if key not in milestone_first_bar:
-                    milestone_first_bar[key] = True
-                    milestone_texts.append(milestone)
-                else:
-                    milestone_texts.append("")
-            # If multiple milestones, join non-empty names, else empty string
-            milestone_text = ", ".join([m for m in milestone_texts if m])
+            key = (row["System"], row["Milestone"])
+            milestone_text = row["Milestone"] if key not in milestone_first_bar else ""
+            milestone_first_bar[key] = True
             rows.append({
                 "System": row["System"],
                 "Start": start,
@@ -380,8 +386,17 @@ def project():
     print("Creating project Gantt chart...")
     tasks = createtasks('2025-11-04', systems, systemmilestones, ressources)
     df = pd.DataFrame(tasks)
-    plottasksonproject(df)
-    plot_system_milestones(df)
+    print("\nOriginal tasks DataFrame:")
+    print(df)
+    print("\nOriginal FTE values:", df["FTE"].unique())
+    
+    convert_tasksed = convert_tasks(tasks)
+    df_converted = pd.DataFrame(convert_tasksed)
+    print("\nConverted tasks DataFrame:")
+    print(df_converted)
+    print("\nConverted FTE values:", df_converted["FTE"].unique())
+    
+    plottasksonproject(df_converted)
 
 if __name__ == "__main__":
     project()
