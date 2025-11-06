@@ -90,9 +90,10 @@ def createtasks(starttime, systems, systemmilestones, ressources):
                     'Start': start.strftime('%Y-%m-%d'),
                     'Finish': finish.strftime('%Y-%m-%d'),
                     'Resource': res['ressourcename'],
+                    'ResourceType': res['ftetype'],
                     'System': system['name'],
                     'Milestone': milestone['name'],
-                    'FTE': milestone['fte']
+                    'FTE': 1
                 })
             current_time = max([parse_date(t['Finish']) for t in tasks if t['Milestone'] == milestone['name'] and t['System'] == system['name']])
     return tasks
@@ -268,23 +269,71 @@ def plottasksonproject(df):
     fig.show()
 
 def plot_system_milestones(df):
-    """Plot system milestones: for each system, create bars for each milestone/resource with FTE as height"""
-    # Group by system, milestone, resource, get min(Start), max(Finish), sum(FTE)
-    milestone_df = df.groupby(["System", "Milestone", "Resource"]).agg({
-        "Start": "min",
-        "Finish": "max",
-        "FTE": "sum"
-    }).reset_index()
+    """Plot system milestones: bar height (vertical thickness) is proportional to total FTEs working at any one time per system"""
+    import pandas as pd
 
-    # Scale FTE so bars fill the vertical space per system
-    max_fte = milestone_df["FTE"].max()
-    milestone_df["FTE_scaled"] = milestone_df["FTE"] / max_fte * 0.3
+    # Collect all unique dates for time splits
+    all_dates = pd.concat([df["Start"], df["Finish"]]).drop_duplicates().sort_values()
+    intervals = list(zip(all_dates[:-1], all_dates[1:]))
 
-    fig = px.timeline(milestone_df, x_start="Start", x_end="Finish", y="System", color="Milestone", text="Resource")
+    rows = []
+    # Track first appearance of each milestone per system
+    milestone_first_bar = {}
+    for (start, end) in intervals:
+        active = df[
+            (df["Start"] <= start) & (df["Finish"] > start)
+        ]
+        grouped = active.groupby("System").agg({
+            "FTE": "sum"
+        }).reset_index()
+        for _, row in grouped.iterrows():
+            system_active = active[active["System"] == row["System"]]
+            milestones = system_active["Milestone"].unique()
+            # For each milestone, decide if it's the first bar
+            milestone_texts = []
+            for milestone in milestones:
+                key = (row["System"], milestone)
+                if key not in milestone_first_bar:
+                    milestone_first_bar[key] = True
+                    milestone_texts.append(milestone)
+                else:
+                    milestone_texts.append("")
+            # If multiple milestones, join non-empty names, else empty string
+            milestone_text = ", ".join([m for m in milestone_texts if m])
+            rows.append({
+                "System": row["System"],
+                "Start": start,
+                "Finish": end,
+                "FTE": row["FTE"],
+                "Milestone": milestone_text
+            })
+
+    interval_df = pd.DataFrame(rows)
+    if interval_df.empty or interval_df["FTE"].max() == 0:
+        print("No milestones to plot or FTE is zero.")
+        return
+
+    # Scale FTE for bar height (vertical thickness)
+    max_fte = interval_df["FTE"].max()
+    interval_df["FTE_scaled"] = interval_df["FTE"] / max_fte * 0.3
+
+    fig = px.timeline(
+        interval_df,
+        x_start="Start",
+        x_end="Finish",
+        y="System",
+        color="System",
+        text="Milestone"
+    )
     fig.update_yaxes(autorange="reversed")
-    fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, width=milestone_df["FTE_scaled"])
+    fig.update_traces(
+        textposition="inside",
+        insidetextanchor="middle",
+        textfont_size=10,
+        width=list(interval_df["FTE_scaled"])
+    )
     fig.update_layout(
-        title="System Milestones (FTE shown by bar height)",
+        title="System Milestones (Bar height ∝ total FTEs working at any time)",
         showlegend=True
     )
     fig.show()
