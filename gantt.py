@@ -45,7 +45,6 @@ ressources = [
     {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester3'}
 ]
 
-
 def createtasks(starttime, systems, systemmilestones, ressources):
     """
     Generate tasks for Gantt chart from systems, systemmilestones, and ressources.
@@ -98,6 +97,44 @@ def createtasks(starttime, systems, systemmilestones, ressources):
             current_time = max([parse_date(t['Finish']) for t in tasks if t['Milestone'] == milestone['name'] and t['System'] == system['name']])
     return tasks
 
+def convert_tasks(tasks):
+    """
+    Convert tasks into intervals grouped by System, ResourceType, and Milestone.
+    For each interval, calculate total FTE count.
+    Output is in the same task format as createtasks().
+    """
+    import pandas as pd
+
+    # Collect all unique time boundaries
+    dates = set()
+    for t in tasks:
+        dates.add(t['Start'])
+        dates.add(t['Finish'])
+    dates = sorted(pd.to_datetime(list(dates)))
+    intervals = list(zip(dates[:-1], dates[1:]))
+
+    result = []
+    for start, end in intervals:
+        # Find tasks active in this interval
+        active = [t for t in tasks if pd.to_datetime(t['Start']) <= start and pd.to_datetime(t['Finish']) > start]
+        # Group by System, ResourceType, Milestone
+        groups = {}
+        for t in active:
+            key = (t['System'], t['ResourceType'], t['Milestone'])
+            groups.setdefault(key, 0)
+            groups[key] += t['FTE']
+        for (system, res_type, milestone), fte_sum in groups.items():
+            result.append({
+                'Task': f'{system}-{milestone}-{res_type}',
+                'Start': start.strftime('%Y-%m-%d'),
+                'Finish': end.strftime('%Y-%m-%d'),
+                'Resource': f'{res_type}',
+                'ResourceType': res_type,
+                'System': system,
+                'Milestone': milestone,
+                'FTE': fte_sum
+            })
+    return result
 
 def basic_gantt_timeline():
     """Basic Gantt chart using plotly.express.timeline (recommended approach)"""

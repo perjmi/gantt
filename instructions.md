@@ -1,0 +1,1 @@
+I would like to build a function, which takes tasks as produced by createtasks() and convert them into another set of tasks. This other set of tasks should be cut pr system, pr ressourceType and pr milestone. You might need to slice the times on the original tasks, because I would for each of these new task like to have the total FTE count too. 
