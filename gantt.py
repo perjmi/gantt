@@ -16,8 +16,10 @@ systemmilestones = [
         'complexity': 'medium',
         'method':'option1',
         'milestones': [
-            {'name': 'milestone1', 'duration': 10,'fte':2,'ftetype':'dev'},
-            {'name': 'milestone2', 'duration': 5,'fte':1,'ftetype':'test'}
+            {'name': 'T360 2 T360Next', 'duration': 15,'workdays':45,'ftetype':'dev'},
+            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':210,'ftetype':'dev'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':200,'ftetype':'dev'}
         ]
     }
 ]
@@ -27,8 +29,8 @@ systemmilestones.append(
         'complexity': 'hard',
         'method':'option2',
         'milestones': [
-            {'name': 'milestone1', 'duration': 15,'fte':3,'ftetype':'dev'},
-            {'name': 'milestone2', 'duration': 7,'fte':2,'ftetype':'test'}
+            {'name': 'milestone1', 'duration': 15,'workdays':45,'ftetype':'dev'},
+            {'name': 'milestone2', 'duration': 7,'workdays':14,'ftetype':'test'}
         ]
     }
 )
@@ -45,24 +47,46 @@ ressources = [
     {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester3'}
 ]
 
+ressources1 = [
+    {'ftetype':'dev','unitcostprday':1050,'availability':0.9,'ressourcename':'Developer4'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer5'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer6'},
+    {'ftetype':'test','unitcostprday':800,'availability':0.9,'ressourcename':'Tester1'},
+    {'ftetype':'test','unitcostprday':820,'availability':0.95,'ressourcename':'Tester2'},
+    {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester3'}
+]
+
 def createtasks(starttime, systems, systemmilestones, ressources):
     """
     Generate tasks for Gantt chart from systems, systemmilestones, and ressources.
     Tries to exhaust resources by issuing as many parallel tasks as possible.
     Returns a list of dicts with Task, Start, Finish.
     starttime: string, e.g. '2025-11-04'
+    
+    Milestone format:
+    - duration: minimum calendar duration allowed (days)
+    - workdays: total person-days (FTE-days) needed to complete the milestone
+    
+    The function assigns resources to meet the workdays requirement while ensuring
+    the calendar duration is at least the minimum duration specified.
     """
     import pandas as pd
     from datetime import timedelta
     
-    def get_available_resources(ftetype):
-        return [r for r in ressources if r['ftetype'] == ftetype]
-    
     def parse_date(d):
         return pd.to_datetime(d)
     
-    current_time = parse_date(starttime)
+    # Track when each resource becomes available
+    resource_availability = {}
+    for res in ressources:
+        resource_availability[res['ressourcename']] = parse_date(starttime)
+    
     tasks = []
+    
+    # Build a queue of (system, milestone_index, milestone) for each system
+    # Track current milestone index for each system
+    system_queues = {}
+    system_milestone_finish = {}  # When the current milestone of each system finished
     
     for system in systems:
         ms_set = None
@@ -70,31 +94,121 @@ def createtasks(starttime, systems, systemmilestones, ressources):
             if ms['complexity'] == system['complexity'] and ms['method'] == system['method']:
                 ms_set = ms
                 break
-        if not ms_set:
-            continue
-        for milestone in ms_set['milestones']:
-            available = get_available_resources(milestone['ftetype'])
-            n_needed = milestone['fte']
-            duration = milestone['duration']
-            assigned = available[:n_needed]
-            if not assigned:
-                continue
-            for res in assigned:
-                eff_duration = duration / res['availability']
-                start = current_time
-                finish = start + timedelta(days=eff_duration)
-                taskname = f"{system['name']}-{milestone['name']}-{res['ressourcename']}"
-                tasks.append({
-                    'Task': taskname,
-                    'Start': start.strftime('%Y-%m-%d'),
-                    'Finish': finish.strftime('%Y-%m-%d'),
-                    'Resource': res['ressourcename'],
-                    'ResourceType': res['ftetype'],
-                    'System': system['name'],
-                    'Milestone': milestone['name'],
-                    'FTE': 1
-                })
-            current_time = max([parse_date(t['Finish']) for t in tasks if t['Milestone'] == milestone['name'] and t['System'] == system['name']])
+        if ms_set:
+            system_name = system['name']
+            system_queues[system_name] = {
+                'milestones': ms_set['milestones'],
+                'current_index': 0,
+                'system': system
+            }
+            system_milestone_finish[system_name] = parse_date(starttime)
+    
+    # Process milestones across all systems, always trying to use available resources
+    while True:
+        # Find the next milestone that can be started
+        # Criteria: has resources available and previous milestone in system is done
+        best_candidate = None
+        best_start_time = None
+        
+        for system_name, queue_info in system_queues.items():
+            if queue_info['current_index'] >= len(queue_info['milestones']):
+                continue  # This system is done
+            
+            milestone = queue_info['milestones'][queue_info['current_index']]
+            ftetype = milestone['ftetype']
+            min_duration = milestone['duration']
+            workdays = milestone['workdays']
+            
+            # Get resources of the correct type, sorted by availability time
+            available_resources = [r for r in ressources if r['ftetype'] == ftetype]
+            available_resources.sort(key=lambda r: resource_availability[r['ressourcename']])
+            
+            if len(available_resources) == 0:
+                continue  # No resources of this type available
+            
+            # Calculate when this milestone could start
+            # It needs: (1) previous milestone in system done, (2) at least one resource available
+            prev_milestone_finish = system_milestone_finish[system_name]
+            
+            # Determine how many resources to assign to meet workdays within min_duration
+            # We want to assign enough resources so that the work can be done in min_duration
+            # or more if needed
+            
+            # Calculate how many resources we need at minimum
+            # If we use N resources for min_duration days, we get: min_duration * sum(availability)
+            # We need this to be >= workdays
+            
+            assigned = []
+            total_availability = 0
+            for res in available_resources:
+                assigned.append(res)
+                total_availability += res['availability']
+                # Check if we can meet workdays in min_duration with these resources
+                if min_duration * total_availability >= workdays:
+                    break
+            
+            if len(assigned) == 0:
+                continue  # Should not happen given the check above
+            
+            # Calculate when all assigned resources are available
+            earliest_resource_time = max([resource_availability[r['ressourcename']] for r in assigned])
+            milestone_can_start = max(prev_milestone_finish, earliest_resource_time)
+            
+            # Choose the milestone that can start earliest
+            if best_candidate is None or milestone_can_start < best_start_time:
+                best_candidate = (system_name, queue_info, milestone, assigned)
+                best_start_time = milestone_can_start
+        
+        if best_candidate is None:
+            break  # No more milestones can be started
+        
+        # Assign the best candidate milestone
+        system_name, queue_info, milestone, assigned = best_candidate
+        min_duration = milestone['duration']
+        workdays = milestone['workdays']
+        
+        # All resources on the same milestone must start at the same time
+        # This is when ALL required resources are available
+        milestone_start = best_start_time
+        
+        # Calculate total availability of assigned resources
+        total_availability = sum(res['availability'] for res in assigned)
+        
+        # Calculate calendar days needed such that total person-days = workdays
+        # Each resource contributes (calendar_days * availability) person-days
+        # Total contribution = calendar_days * total_availability
+        # We need: calendar_days * total_availability = workdays
+        calendar_days_needed = workdays / total_availability if total_availability > 0 else min_duration
+        
+        # Ensure we respect the minimum duration
+        calendar_days = max(calendar_days_needed, min_duration)
+        
+        milestone_finish_times = []
+        for res in assigned:
+            # Each resource works for the same calendar_days
+            finish = milestone_start + timedelta(days=calendar_days)
+            
+            taskname = f"{queue_info['system']['name']}-{milestone['name']}-{res['ressourcename']}"
+            tasks.append({
+                'Task': taskname,
+                'Start': milestone_start.strftime('%Y-%m-%d'),
+                'Finish': finish.strftime('%Y-%m-%d'),
+                'Resource': res['ressourcename'],
+                'ResourceType': res['ftetype'],
+                'System': queue_info['system']['name'],
+                'Milestone': milestone['name'],
+                'FTE': 1,
+                'EffectivePersonDays': calendar_days * res['availability']  # For verification
+            })
+            
+            # Update when this resource becomes available again
+            resource_availability[res['ressourcename']] = finish
+            milestone_finish_times.append(finish)
+        
+        # Mark this milestone as complete for this system
+        system_milestone_finish[system_name] = max(milestone_finish_times)
+        queue_info['current_index'] += 1
+    
     return tasks
 
 def convert_tasks(tasks):
