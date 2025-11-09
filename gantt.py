@@ -560,11 +560,74 @@ def plot_system_milestones(df):
     )
     fig.show()
 
+def plot_system_summary(df):
+    """
+    Plot simplified Gantt chart: one box per system from start to finish.
+    Box height × length represents total workdays.
+    Height is proportional to workdays, so height × length = workdays.
+    """
+    import pandas as pd
+    
+    # Calculate start, end, and total workdays for each system
+    system_summary = df.groupby('System').agg({
+        'Start': 'min',
+        'Finish': 'max',
+        'EffectivePersonDays': 'sum'
+    }).reset_index()
+    
+    system_summary.columns = ['System', 'Start', 'Finish', 'TotalWorkdays']
+    
+    # Calculate calendar days for each system
+    system_summary['Start'] = pd.to_datetime(system_summary['Start'])
+    system_summary['Finish'] = pd.to_datetime(system_summary['Finish'])
+    system_summary['CalendarDays'] = (system_summary['Finish'] - system_summary['Start']).dt.days
+    
+    # Calculate box height: height = workdays / calendar_days
+    # So height × length = workdays / calendar_days × calendar_days = workdays
+    system_summary['BoxHeight'] = system_summary['TotalWorkdays'] / system_summary['CalendarDays']
+    
+    # Scale heights for visualization
+    max_height = system_summary['BoxHeight'].max()
+    if max_height > 0:
+        system_summary['BoxHeight_scaled'] = system_summary['BoxHeight'] / max_height * 0.8
+    else:
+        system_summary['BoxHeight_scaled'] = 0.5
+    
+    print("\nSystem Summary:")
+    print(system_summary[['System', 'Start', 'Finish', 'CalendarDays', 'TotalWorkdays', 'BoxHeight']])
+    
+    # Create text showing workdays
+    system_summary['Text'] = system_summary['TotalWorkdays'].apply(lambda x: f'{x:.0f} wd')
+    
+    fig = px.timeline(
+        system_summary,
+        x_start="Start",
+        x_end="Finish",
+        y="System",
+        color="System",
+        text="Text"
+    )
+    fig.update_yaxes(autorange="reversed")
+    fig.update_traces(
+        textposition="inside",
+        insidetextanchor="middle",
+        textfont_size=12,
+        textfont_color="white",
+        width=list(system_summary['BoxHeight_scaled'])
+    )
+    fig.update_layout(
+        title="System Summary (Box height × length ∝ total workdays)",
+        showlegend=True,
+        xaxis_title="Timeline",
+        yaxis_title="System"
+    )
+    fig.show()
+
 def project():
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
-    # Limit to 1 system in progress at any time to minimize calendar gaps
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
+    # Limit to 3 systems in progress at any time
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=3)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
@@ -577,6 +640,7 @@ def project():
     print("\nConverted FTE values:", df_converted["FTE"].unique())
     
     plottasksonproject(df_converted)
+    plot_system_summary(df)
 
 if __name__ == "__main__":
     project()
