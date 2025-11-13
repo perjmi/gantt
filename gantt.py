@@ -10,6 +10,13 @@ import pandas as pd
 systems = [{'name': 'bif', 'systype': 'general', 'country': 'all', 'complexity': 'hard', 'quality': 'good', 'method': 'option3'}]
 systems.append({'name': 'hac', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
 systems.append({'name': 'sol', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
+systems.append({'name': 'prosit', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
+systems.append({'name': 'grus', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
+systems.append({'name': 'warranty', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
+systems.append({'name': 'motor', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'hard', 'method': 'option1'})
+systems.append({'name': 'gwse', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'clan', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'mdb', 'systype': 'customer', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'tia', 'systype': 'policy', 'country': 'dk', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
 systems.append({'name': 'fks', 'systype': 'customer', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'gwdk', 'systype': 'claims', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
@@ -19,13 +26,6 @@ systems.append({'name':'gwaff','systype':'policy','country':'dk','complexity':'m
 systems.append({'name':'pms','systype':'policy','country':'no','complexity':'hard','quality':'medium','method':'option2'})
 systems.append({'name': 'gwno', 'systype': 'claims', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 systems.append({'name': 'kn', 'systype': 'customer', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
-systems.append({'name': 'prosit', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'grus', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'warranty', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'motor', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'hard', 'method': 'option1'})
-systems.append({'name': 'gwse', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
-systems.append({'name': 'clan', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
-systems.append({'name': 'mdb', 'systype': 'customer', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 
 systemmilestones = [
     {
@@ -33,7 +33,7 @@ systemmilestones = [
         'method':'option1',
         'milestones': [
             {'name': 'T360 2 T360Next', 'duration': 15,'workdays':45,'ftetype':'dev'},
-            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':210,'ftetype':'dev'},
+            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':100,'ftetype':'dev'},
             {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
             {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
@@ -42,7 +42,20 @@ systemmilestones = [
         ]
     }
 ]
-
+systemmilestones.append(
+   {
+        'complexity': 'hard',
+        'method':'option1',
+        'milestones': [
+            {'name': 'T360 2 T360Next', 'duration': 15,'workdays':45,'ftetype':'dev'},
+            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':100,'ftetype':'dev'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
+            {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
+            {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
+        ]
+    })
 systemmilestones.append(
     {
         'complexity': 'small',
@@ -623,6 +636,52 @@ def plot_system_summary(df):
     )
     fig.show()
 
+def plot_milestone_progress(df):
+    """
+    Plot a line chart showing cumulative number of milestones completed over time.
+    A milestone is considered complete when it finishes.
+    """
+    import pandas as pd
+    import plotly.graph_objects as go
+    
+    # Get unique milestone completions (system + milestone combination)
+    # Group by System and Milestone to get finish times
+    milestone_completions = df.groupby(['System', 'Milestone']).agg({
+        'Finish': 'max'
+    }).reset_index()
+    
+    milestone_completions['Finish'] = pd.to_datetime(milestone_completions['Finish'])
+    milestone_completions = milestone_completions.sort_values('Finish')
+    
+    # Create cumulative count
+    milestone_completions['CumulativeMilestones'] = range(1, len(milestone_completions) + 1)
+    
+    print("\nMilestone Completions:")
+    print(milestone_completions)
+    
+    # Create line chart
+    fig = go.Figure()
+    
+    fig.add_trace(go.Scatter(
+        x=milestone_completions['Finish'],
+        y=milestone_completions['CumulativeMilestones'],
+        mode='lines+markers',
+        name='Milestones Completed',
+        line=dict(color='blue', width=2),
+        marker=dict(size=6),
+        hovertemplate='<b>Date:</b> %{x}<br><b>Milestones:</b> %{y}<extra></extra>'
+    ))
+    
+    fig.update_layout(
+        title='Cumulative Milestones Completed Over Time',
+        xaxis_title='Date',
+        yaxis_title='Number of Milestones Completed',
+        hovermode='closest',
+        showlegend=True
+    )
+    
+    fig.show()
+
 def project():
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
@@ -641,6 +700,7 @@ def project():
     
     plottasksonproject(df_converted)
     plot_system_summary(df)
+    plot_milestone_progress(df)
 
 if __name__ == "__main__":
     project()
