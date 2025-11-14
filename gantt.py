@@ -8,26 +8,41 @@ import plotly.figure_factory as ff
 import pandas as pd
 
 systems = [{'name': 'bif', 'systype': 'general', 'country': 'all', 'complexity': 'hard', 'quality': 'good', 'method': 'option3'}]
-systems.append({'name': 'hac', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'sol', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'prosit', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'grus', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'warranty', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
-systems.append({'name': 'motor', 'systype': 'policy', 'country': 'se', 'complexity': 'medium', 'quality': 'hard', 'method': 'option1'})
+systems.append({'name': 'hac', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'sol', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'prosit', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name':'axapta','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
+systems.append({'name': 'grus', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'warranty', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name': 'motor', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'poor', 'method': 'option1'})
 systems.append({'name': 'gwse', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'clan', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
+systems.append({'name':'tosca','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
 systems.append({'name': 'mdb', 'systype': 'customer', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'tia', 'systype': 'policy', 'country': 'dk', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
 systems.append({'name': 'fks', 'systype': 'customer', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'gwdk', 'systype': 'claims', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
-systems.append({'name':'tosca','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
-systems.append({'name':'axapta','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
 systems.append({'name':'gwaff','systype':'policy','country':'dk','complexity':'medium','quality':'good','method':'option2'})
 systems.append({'name':'pms','systype':'policy','country':'no','complexity':'hard','quality':'medium','method':'option2'})
 systems.append({'name': 'gwno', 'systype': 'claims', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 systems.append({'name': 'kn', 'systype': 'customer', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 
 systemmilestones = [
+    {
+        'complexity': 'small',
+        'method':'option1',
+        'milestones': [
+            {'name': 'T360 2 T360Next', 'duration': 15,'workdays':20,'ftetype':'dev'},
+            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':20,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':20,'ftetype':'dev'},
+            {'name': 'Test of MM', 'duration': 30,'workdays':20,'ftetype':'dev'},
+            {'name': 'Test of other marts', 'duration': 30,'workdays':20,'ftetype':'dev'}
+        ]
+    }
+]
+systemmilestones.append(
     {
         'complexity': 'medium',
         'method':'option1',
@@ -41,7 +56,7 @@ systemmilestones = [
             {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
         ]
     }
-]
+)
 systemmilestones.append(
    {
         'complexity': 'hard',
@@ -93,7 +108,7 @@ systemmilestones.append(
         'method':'option3',
         'milestones': [
             {'name': 'CTM', 'duration': 40,'workdays':90,'ftetype':'dev'},
-            {'name': 'CTM to SF', 'duration': 20,'workdays':210,'ftetype':'dev'},
+            {'name': 'CTM to SF', 'duration': 20,'workdays':100,'ftetype':'dev'},
             {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':200,'ftetype':'dev'},
             {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
@@ -104,32 +119,25 @@ systemmilestones.append(
 )
 
 ressources = [
-    {'ftetype':'dev','unitcostprday':1000,'availability':0.8,'ressourcename':'Developer1'},
-    {'ftetype':'dev','unitcostprday':1000,'availability':1.0,'ressourcename':'Developer2'},
-    {'ftetype':'dev','unitcostprday':950,'availability':0.85,'ressourcename':'Developer3'},
-    {'ftetype':'dev','unitcostprday':1050,'availability':0.9,'ressourcename':'Developer4'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer5'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer6'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer7'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer8'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer9'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer10'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer11'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer12'},
-    {'ftetype':'test','unitcostprday':800,'availability':0.9,'ressourcename':'Tester1'},
-    {'ftetype':'test','unitcostprday':820,'availability':0.95,'ressourcename':'Tester2'},
-    {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester3'},
-    {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester4'}
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1'},
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2'},
+    {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3'},
+    {'ftetype':'dev','unitcostprday':1050,'availability':0.6,'ressourcename':'Developer4'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer5'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer6'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer7'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer8'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer9'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer10'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer11'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer12'},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer13'},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer14'},
+    {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1'},
+    {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2'},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3'}
 ]
 
-ressources1 = [
-    {'ftetype':'dev','unitcostprday':1050,'availability':0.9,'ressourcename':'Developer4'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.95,'ressourcename':'Developer5'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':1.0,'ressourcename':'Developer6'},
-    {'ftetype':'test','unitcostprday':800,'availability':0.9,'ressourcename':'Tester1'},
-    {'ftetype':'test','unitcostprday':820,'availability':0.95,'ressourcename':'Tester2'},
-    {'ftetype':'test','unitcostprday':780,'availability':1.0,'ressourcename':'Tester3'}
-]
 
 def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in_progress=3):
     """
@@ -146,6 +154,8 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
     
     The function assigns resources to meet the workdays requirement while ensuring
     the calendar duration is at least the minimum duration specified.
+    
+    Resources are only assigned on workdays (Monday-Friday), excluding weekends.
     """
     import pandas as pd
     from datetime import timedelta
@@ -153,10 +163,33 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
     def parse_date(d):
         return pd.to_datetime(d)
     
-    # Track when each resource becomes available
+    def is_workday(date):
+        """Check if a date is a workday (Monday=0 to Friday=4)"""
+        return date.weekday() < 5
+    
+    def next_workday(date):
+        """Get the next workday from the given date"""
+        next_day = date
+        while not is_workday(next_day):
+            next_day += timedelta(days=1)
+        return next_day
+    
+    def add_workdays(start_date, num_workdays):
+        """Add a number of workdays to a date, skipping weekends"""
+        current = start_date
+        days_added = 0
+        while days_added < num_workdays:
+            if is_workday(current):
+                days_added += 1
+            if days_added < num_workdays:
+                current += timedelta(days=1)
+        return current
+    
+    # Track when each resource becomes available (ensure start is a workday)
     resource_availability = {}
+    start_date = next_workday(parse_date(starttime))
     for res in ressources:
-        resource_availability[res['ressourcename']] = parse_date(starttime)
+        resource_availability[res['ressourcename']] = start_date
     
     tasks = []
     
@@ -249,30 +282,55 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
 
             earliest_resource_time = max([resource_availability[r['ressourcename']] for r in assigned])
             milestone_can_start = max(prev_milestone_finish, earliest_resource_time)
+            
+            # Ensure milestone starts on a workday
+            milestone_start = next_workday(milestone_can_start)
 
-            # Assign this milestone
-            milestone_start = milestone_can_start
+            # Calculate how many workdays are needed based on availability
             total_availability = sum(res['availability'] for res in assigned)
-            calendar_days_needed = workdays / total_availability if total_availability > 0 else min_duration
-            calendar_days = max(calendar_days_needed, min_duration)
+            workdays_needed = workdays / total_availability if total_availability > 0 else min_duration
+            
+            # Calculate calendar duration considering only workdays
+            # We need at least min_duration calendar days, and enough workdays to complete the work
+            calendar_days_for_workdays = 0
+            temp_date = milestone_start
+            workdays_counted = 0
+            while workdays_counted < workdays_needed:
+                if is_workday(temp_date):
+                    workdays_counted += 1
+                temp_date += timedelta(days=1)
+                calendar_days_for_workdays += 1
+            
+            # Ensure we meet the minimum duration requirement
+            calendar_days = max(calendar_days_for_workdays, min_duration)
+            
+            # Calculate the finish date by adding calendar days
+            milestone_finish = milestone_start + timedelta(days=calendar_days)
+            
+            # Count actual workdays in the span for effective person-days calculation
+            actual_workdays = 0
+            check_date = milestone_start
+            while check_date < milestone_finish:
+                if is_workday(check_date):
+                    actual_workdays += 1
+                check_date += timedelta(days=1)
 
             milestone_finish_times = []
             for res in assigned:
-                finish = milestone_start + timedelta(days=calendar_days)
                 taskname = f"{queue_info['system']['name']}-{milestone['name']}-{res['ressourcename']}"
                 tasks.append({
                     'Task': taskname,
                     'Start': milestone_start.strftime('%Y-%m-%d'),
-                    'Finish': finish.strftime('%Y-%m-%d'),
+                    'Finish': milestone_finish.strftime('%Y-%m-%d'),
                     'Resource': res['ressourcename'],
                     'ResourceType': res['ftetype'],
                     'System': queue_info['system']['name'],
                     'Milestone': milestone['name'],
                     'FTE': 1,
-                    'EffectivePersonDays': calendar_days * res['availability']
+                    'EffectivePersonDays': actual_workdays * res['availability']
                 })
-                resource_availability[res['ressourcename']] = finish
-                milestone_finish_times.append(finish)
+                resource_availability[res['ressourcename']] = milestone_finish
+                milestone_finish_times.append(milestone_finish)
                 used_resources.add(res['ressourcename'])
 
             system_milestone_finish[system_name] = max(milestone_finish_times)
