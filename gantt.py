@@ -71,36 +71,55 @@ systemmilestones.append(
             {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
         ]
     })
+
 systemmilestones.append(
     {
         'complexity': 'small',
         'method':'option2',
         'milestones': [
-            {'name': 'CTM', 'duration': 20,'workdays':50,'ftetype':'dev'},
-            {'name': 'CTM to SF', 'duration': 20,'workdays':100,'ftetype':'dev'},
+            {'name': 'CTM', 'duration': 30,'workdays':150,'ftetype':'dev'},
+            {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
             {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
+            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
     }
 )
 
 systemmilestones.append(
     {
-        'complexity': 'hard',
+        'complexity': 'medium',
         'method':'option2',
         'milestones': [
-            {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':210,'ftetype':'dev'},
+            {'name': 'CTM', 'duration': 40,'workdays':190,'ftetype':'dev'},
+            {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
             {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
-            {'name': 'Real data 2 SF', 'duration': 40,'workdays':200,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
     }
 )
+
+systemmilestones.append(
+    {
+        'complexity': 'medium',
+        'method':'option2',
+        'milestones': [
+            {'name': 'CTM', 'duration': 40,'workdays':250,'ftetype':'dev'},
+            {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
+        ]
+    }
+)
+
 
 systemmilestones.append(
     {
@@ -744,7 +763,7 @@ def project():
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=3)
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
