@@ -557,7 +557,7 @@ def main():
     
     print("\nAll examples completed!")
 
-def plottasksonproject(df):
+def plottasksonproject(df, save_as_png=False, filename="gantt_project_tasks.png"):
     """Plot the Gantt chart for the project tasks DataFrame"""
     # Scale FTE so bars have height proportional to FTE
     max_fte = df["FTE"].max()
@@ -586,9 +586,16 @@ def plottasksonproject(df):
     fig.update_traces(textposition="inside", insidetextanchor="middle", textfont_size=10, textfont_color="white")
     fig.update_layout(
         title="Project Gantt Chart (Bar height ∝ FTE)",
-        showlegend=True
+        showlegend=True,
+        width=1200,
+        height=800
     )
-    fig.show()
+    
+    if save_as_png:
+        fig.write_image(filename)
+        print(f"Saved project tasks chart as {filename}")
+    else:
+        fig.show()
 
 def plot_system_milestones(df):
     """Plot system milestones: bar height (vertical thickness) is proportional to total FTEs working at any one time per system"""
@@ -650,7 +657,7 @@ def plot_system_milestones(df):
     )
     fig.show()
 
-def plot_system_summary(df):
+def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.png"):
     """
     Plot simplified Gantt chart: one box per system from start to finish.
     Box height × length represents total workdays.
@@ -709,11 +716,18 @@ def plot_system_summary(df):
         title="System Summary (Box height × length ∝ total workdays)",
         showlegend=True,
         xaxis_title="Timeline",
-        yaxis_title="System"
+        yaxis_title="System",
+        width=1200,
+        height=800
     )
-    fig.show()
+    
+    if save_as_png:
+        fig.write_image(filename)
+        print(f"Saved system summary chart as {filename}")
+    else:
+        fig.show()
 
-def plot_milestone_progress(df):
+def plot_milestone_progress(df, save_as_png=False, filename="gantt_milestone_progress.png"):
     """
     Plot a line chart showing cumulative number of milestones completed over time.
     A milestone is considered complete when it finishes.
@@ -754,10 +768,16 @@ def plot_milestone_progress(df):
         xaxis_title='Date',
         yaxis_title='Number of Milestones Completed',
         hovermode='closest',
-        showlegend=True
+        showlegend=True,
+        width=1200,
+        height=800
     )
     
-    fig.show()
+    if save_as_png:
+        fig.write_image(filename)
+        print(f"Saved milestone progress chart as {filename}")
+    else:
+        fig.show()
 
 def project():
     """Generate and display a Gantt chart for the defined project"""
@@ -775,9 +795,15 @@ def project():
     print(df_converted)
     print("\nConverted FTE values:", df_converted["FTE"].unique())
     
-    plottasksonproject(df_converted)
-    plot_system_summary(df)
-    plot_milestone_progress(df)
+    # Save all three charts as PNG files
+    plottasksonproject(df_converted, save_as_png=True, filename="gantt_project_tasks.png")
+    plot_system_summary(df, save_as_png=True, filename="gantt_system_summary.png")
+    plot_milestone_progress(df, save_as_png=True, filename="gantt_milestone_progress.png")
+    
+    print("\nAll three Gantt charts have been saved as PNG files:")
+    print("1. gantt_project_tasks.png - Detailed project tasks with milestones")
+    print("2. gantt_system_summary.png - System summary with total workdays")
+    print("3. gantt_milestone_progress.png - Cumulative milestone progress over time")
 
 if __name__ == "__main__":
     project()
