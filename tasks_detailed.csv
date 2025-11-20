@@ -1,0 +1,337 @@
+Task,Start,Finish,Resource,ResourceType,System,Milestone,FTE,EffectivePersonDays
+bif-CTM-Developer1,2025-11-04,2025-12-26,Developer1,dev,bif,CTM,1,22.8
+bif-CTM-Developer2,2025-11-04,2025-12-26,Developer2,dev,bif,CTM,1,22.8
+bif-CTM-Developer3,2025-11-04,2025-12-26,Developer3,dev,bif,CTM,1,22.8
+bif-CTM-Developer4,2025-11-04,2025-12-26,Developer4,dev,bif,CTM,1,22.8
+hac-T360 2 T360Next-Developer5,2025-11-04,2025-11-20,Developer5,dev,hac,T360 2 T360Next,1,7.199999999999999
+hac-T360 2 T360Next-Developer6,2025-11-04,2025-11-20,Developer6,dev,hac,T360 2 T360Next,1,7.199999999999999
+hac-T360 2 T360Next-Developer7,2025-11-04,2025-11-20,Developer7,dev,hac,T360 2 T360Next,1,7.199999999999999
+sol-T360 2 T360Next-Developer8,2025-11-04,2025-11-20,Developer8,dev,sol,T360 2 T360Next,1,7.199999999999999
+sol-T360 2 T360Next-Developer9,2025-11-04,2025-11-20,Developer9,dev,sol,T360 2 T360Next,1,7.199999999999999
+sol-T360 2 T360Next-Developer10,2025-11-04,2025-11-20,Developer10,dev,sol,T360 2 T360Next,1,7.199999999999999
+prosit-T360 2 T360Next-Developer11,2025-11-04,2025-11-20,Developer11,dev,prosit,T360 2 T360Next,1,7.199999999999999
+prosit-T360 2 T360Next-Developer12,2025-11-04,2025-11-20,Developer12,dev,prosit,T360 2 T360Next,1,7.199999999999999
+prosit-T360 2 T360Next-Developer13,2025-11-04,2025-11-20,Developer13,dev,prosit,T360 2 T360Next,1,7.199999999999999
+bif-CTM to SF-Developer14,2025-12-26,2026-01-22,Developer14,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer5,2025-12-26,2026-01-22,Developer5,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer6,2025-12-26,2026-01-22,Developer6,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer7,2025-12-26,2026-01-22,Developer7,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer8,2025-12-26,2026-01-22,Developer8,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer9,2025-12-26,2026-01-22,Developer9,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer10,2025-12-26,2026-01-22,Developer10,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer11,2025-12-26,2026-01-22,Developer11,dev,bif,CTM to SF,1,11.4
+bif-CTM to SF-Developer12,2025-12-26,2026-01-22,Developer12,dev,bif,CTM to SF,1,11.4
+prosit-BI fac 2 T360Next-Developer13,2025-12-26,2026-02-06,Developer13,dev,prosit,BI fac 2 T360Next,1,18.0
+prosit-BI fac 2 T360Next-Developer1,2025-12-26,2026-02-06,Developer1,dev,prosit,BI fac 2 T360Next,1,18.0
+sol-BI fac 2 T360Next-Developer2,2025-12-26,2026-02-06,Developer2,dev,sol,BI fac 2 T360Next,1,18.0
+sol-BI fac 2 T360Next-Developer3,2025-12-26,2026-02-06,Developer3,dev,sol,BI fac 2 T360Next,1,18.0
+hac-BI fac 2 T360Next-Developer4,2025-12-26,2026-03-06,Developer4,dev,hac,BI fac 2 T360Next,1,30.0
+bif-Test on SF mock-Tester1,2026-01-22,2026-01-27,Tester1,test,bif,Test on SF mock,1,1.7999999999999998
+bif-Test on SF mock-Tester2,2026-01-22,2026-01-27,Tester2,test,bif,Test on SF mock,1,1.7999999999999998
+bif-Test on SF mock-Tester3,2026-01-22,2026-01-27,Tester3,test,bif,Test on SF mock,1,1.7999999999999998
+bif-Real data 2 SF-Developer5,2026-01-27,2026-03-20,Developer5,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer6,2026-01-27,2026-03-20,Developer6,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer7,2026-01-27,2026-03-20,Developer7,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer8,2026-01-27,2026-03-20,Developer8,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer9,2026-01-27,2026-03-20,Developer9,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer10,2026-01-27,2026-03-20,Developer10,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer11,2026-01-27,2026-03-20,Developer11,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer12,2026-01-27,2026-03-20,Developer12,dev,bif,Real data 2 SF,1,22.8
+bif-Real data 2 SF-Developer14,2026-01-27,2026-03-20,Developer14,dev,bif,Real data 2 SF,1,22.8
+prosit-Test on SF mock-Tester1,2026-02-06,2026-02-11,Tester1,test,prosit,Test on SF mock,1,1.7999999999999998
+prosit-Test on SF mock-Tester2,2026-02-06,2026-02-11,Tester2,test,prosit,Test on SF mock,1,1.7999999999999998
+prosit-Test on SF mock-Tester3,2026-02-06,2026-02-11,Tester3,test,prosit,Test on SF mock,1,1.7999999999999998
+bif-Test of SF-Developer1,2026-03-20,2026-04-03,Developer1,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer2,2026-03-20,2026-04-03,Developer2,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer3,2026-03-20,2026-04-03,Developer3,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer13,2026-03-20,2026-04-03,Developer13,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer4,2026-03-20,2026-04-03,Developer4,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer5,2026-03-20,2026-04-03,Developer5,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer6,2026-03-20,2026-04-03,Developer6,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer7,2026-03-20,2026-04-03,Developer7,dev,bif,Test of SF,1,6.0
+bif-Test of SF-Developer8,2026-03-20,2026-04-03,Developer8,dev,bif,Test of SF,1,6.0
+prosit-Real data 2 SF-Developer9,2026-03-20,2026-05-07,Developer9,dev,prosit,Real data 2 SF,1,20.4
+sol-Test on SF mock-Tester1,2026-02-11,2026-02-14,Tester1,test,sol,Test on SF mock,1,1.7999999999999998
+sol-Test on SF mock-Tester2,2026-02-11,2026-02-14,Tester2,test,sol,Test on SF mock,1,1.7999999999999998
+sol-Test on SF mock-Tester3,2026-02-11,2026-02-14,Tester3,test,sol,Test on SF mock,1,1.7999999999999998
+bif-Test of MM-Developer10,2026-04-03,2026-05-13,Developer10,dev,bif,Test of MM,1,16.8
+bif-Test of MM-Developer11,2026-04-03,2026-05-13,Developer11,dev,bif,Test of MM,1,16.8
+bif-Test of MM-Developer12,2026-04-03,2026-05-13,Developer12,dev,bif,Test of MM,1,16.8
+prosit-Test of SF-Developer14,2026-05-07,2026-05-20,Developer14,dev,prosit,Test of SF,1,5.3999999999999995
+prosit-Test of SF-Developer1,2026-05-07,2026-05-20,Developer1,dev,prosit,Test of SF,1,5.3999999999999995
+prosit-Test of SF-Developer2,2026-05-07,2026-05-20,Developer2,dev,prosit,Test of SF,1,5.3999999999999995
+prosit-Test of SF-Developer3,2026-05-07,2026-05-20,Developer3,dev,prosit,Test of SF,1,5.3999999999999995
+sol-Real data 2 SF-Developer4,2026-04-03,2026-05-21,Developer4,dev,sol,Real data 2 SF,1,20.4
+hac-Test on SF mock-Tester1,2026-03-06,2026-03-11,Tester1,test,hac,Test on SF mock,1,1.7999999999999998
+hac-Test on SF mock-Tester2,2026-03-06,2026-03-11,Tester2,test,hac,Test on SF mock,1,1.7999999999999998
+hac-Test on SF mock-Tester3,2026-03-06,2026-03-11,Tester3,test,hac,Test on SF mock,1,1.7999999999999998
+bif-Test of other marts-Developer5,2026-05-13,2026-06-20,Developer5,dev,bif,Test of other marts,1,16.8
+bif-Test of other marts-Developer6,2026-05-13,2026-06-20,Developer6,dev,bif,Test of other marts,1,16.8
+bif-Test of other marts-Developer7,2026-05-13,2026-06-20,Developer7,dev,bif,Test of other marts,1,16.8
+prosit-Test of MM-Developer8,2026-05-20,2026-06-19,Developer8,dev,prosit,Test of MM,1,13.2
+prosit-Test of MM-Developer13,2026-05-20,2026-06-19,Developer13,dev,prosit,Test of MM,1,13.2
+sol-Test of SF-Developer9,2026-05-21,2026-06-03,Developer9,dev,sol,Test of SF,1,5.3999999999999995
+sol-Test of SF-Developer10,2026-05-21,2026-06-03,Developer10,dev,sol,Test of SF,1,5.3999999999999995
+sol-Test of SF-Developer11,2026-05-21,2026-06-03,Developer11,dev,sol,Test of SF,1,5.3999999999999995
+sol-Test of SF-Developer12,2026-05-21,2026-06-03,Developer12,dev,sol,Test of SF,1,5.3999999999999995
+hac-Real data 2 SF-Developer1,2026-05-20,2026-07-07,Developer1,dev,hac,Real data 2 SF,1,20.4
+prosit-Test of other marts-Developer2,2026-06-19,2026-07-19,Developer2,dev,prosit,Test of other marts,1,12.6
+prosit-Test of other marts-Developer3,2026-06-19,2026-07-19,Developer3,dev,prosit,Test of other marts,1,12.6
+sol-Test of MM-Developer14,2026-06-03,2026-07-03,Developer14,dev,sol,Test of MM,1,13.2
+sol-Test of MM-Developer4,2026-06-03,2026-07-03,Developer4,dev,sol,Test of MM,1,13.2
+hac-Test of SF-Developer9,2026-07-07,2026-07-18,Developer9,dev,hac,Test of SF,1,5.3999999999999995
+hac-Test of SF-Developer10,2026-07-07,2026-07-18,Developer10,dev,hac,Test of SF,1,5.3999999999999995
+hac-Test of SF-Developer11,2026-07-07,2026-07-18,Developer11,dev,hac,Test of SF,1,5.3999999999999995
+hac-Test of SF-Developer12,2026-07-07,2026-07-18,Developer12,dev,hac,Test of SF,1,5.3999999999999995
+grus-T360 2 T360Next-Developer8,2026-06-22,2026-07-08,Developer8,dev,grus,T360 2 T360Next,1,7.199999999999999
+grus-T360 2 T360Next-Developer13,2026-06-22,2026-07-08,Developer13,dev,grus,T360 2 T360Next,1,7.199999999999999
+grus-T360 2 T360Next-Developer5,2026-06-22,2026-07-08,Developer5,dev,grus,T360 2 T360Next,1,7.199999999999999
+sol-Test of other marts-Developer6,2026-07-03,2026-08-02,Developer6,dev,sol,Test of other marts,1,12.6
+sol-Test of other marts-Developer7,2026-07-03,2026-08-02,Developer7,dev,sol,Test of other marts,1,12.6
+hac-Test of MM-Developer4,2026-07-20,2026-08-19,Developer4,dev,hac,Test of MM,1,13.2
+hac-Test of MM-Developer14,2026-07-20,2026-08-19,Developer14,dev,hac,Test of MM,1,13.2
+grus-BI fac 2 T360Next-Developer1,2026-07-08,2026-08-19,Developer1,dev,grus,BI fac 2 T360Next,1,18.0
+grus-BI fac 2 T360Next-Developer5,2026-07-08,2026-08-19,Developer5,dev,grus,BI fac 2 T360Next,1,18.0
+warranty-T360 2 T360Next-Developer8,2026-07-20,2026-08-05,Developer8,dev,warranty,T360 2 T360Next,1,7.199999999999999
+warranty-T360 2 T360Next-Developer13,2026-07-20,2026-08-05,Developer13,dev,warranty,T360 2 T360Next,1,7.199999999999999
+warranty-T360 2 T360Next-Developer9,2026-07-20,2026-08-05,Developer9,dev,warranty,T360 2 T360Next,1,7.199999999999999
+hac-Test of other marts-Developer10,2026-08-19,2026-09-18,Developer10,dev,hac,Test of other marts,1,13.2
+hac-Test of other marts-Developer11,2026-08-19,2026-09-18,Developer11,dev,hac,Test of other marts,1,13.2
+grus-Test on SF mock-Tester1,2026-08-19,2026-08-22,Tester1,test,grus,Test on SF mock,1,1.7999999999999998
+grus-Test on SF mock-Tester2,2026-08-19,2026-08-22,Tester2,test,grus,Test on SF mock,1,1.7999999999999998
+grus-Test on SF mock-Tester3,2026-08-19,2026-08-22,Tester3,test,grus,Test on SF mock,1,1.7999999999999998
+warranty-BI fac 2 T360Next-Developer12,2026-08-05,2026-09-16,Developer12,dev,warranty,BI fac 2 T360Next,1,18.0
+warranty-BI fac 2 T360Next-Developer2,2026-08-05,2026-09-16,Developer2,dev,warranty,BI fac 2 T360Next,1,18.0
+motor-T360 2 T360Next-Developer3,2026-08-03,2026-08-19,Developer3,dev,motor,T360 2 T360Next,1,7.199999999999999
+motor-T360 2 T360Next-Developer6,2026-08-03,2026-08-19,Developer6,dev,motor,T360 2 T360Next,1,7.199999999999999
+motor-T360 2 T360Next-Developer7,2026-08-03,2026-08-19,Developer7,dev,motor,T360 2 T360Next,1,7.199999999999999
+grus-Real data 2 SF-Developer8,2026-08-24,2026-10-09,Developer8,dev,grus,Real data 2 SF,1,20.4
+warranty-Test on SF mock-Tester1,2026-09-16,2026-09-19,Tester1,test,warranty,Test on SF mock,1,1.7999999999999998
+warranty-Test on SF mock-Tester2,2026-09-16,2026-09-19,Tester2,test,warranty,Test on SF mock,1,1.7999999999999998
+warranty-Test on SF mock-Tester3,2026-09-16,2026-09-19,Tester3,test,warranty,Test on SF mock,1,1.7999999999999998
+motor-BI fac 2 T360Next-Developer9,2026-08-19,2026-09-30,Developer9,dev,motor,BI fac 2 T360Next,1,18.0
+motor-BI fac 2 T360Next-Developer13,2026-08-19,2026-09-30,Developer13,dev,motor,BI fac 2 T360Next,1,18.0
+gwse-T360 2 T360Next-Developer1,2026-08-19,2026-09-04,Developer1,dev,gwse,T360 2 T360Next,1,7.199999999999999
+gwse-T360 2 T360Next-Developer3,2026-08-19,2026-09-04,Developer3,dev,gwse,T360 2 T360Next,1,7.199999999999999
+gwse-T360 2 T360Next-Developer4,2026-08-19,2026-09-04,Developer4,dev,gwse,T360 2 T360Next,1,7.199999999999999
+grus-Test of SF-Developer5,2026-10-09,2026-10-22,Developer5,dev,grus,Test of SF,1,5.3999999999999995
+grus-Test of SF-Developer6,2026-10-09,2026-10-22,Developer6,dev,grus,Test of SF,1,5.3999999999999995
+grus-Test of SF-Developer7,2026-10-09,2026-10-22,Developer7,dev,grus,Test of SF,1,5.3999999999999995
+grus-Test of SF-Developer14,2026-10-09,2026-10-22,Developer14,dev,grus,Test of SF,1,5.3999999999999995
+warranty-Real data 2 SF-Developer1,2026-09-21,2026-11-06,Developer1,dev,warranty,Real data 2 SF,1,20.4
+motor-Test on SF mock-Tester1,2026-09-30,2026-10-03,Tester1,test,motor,Test on SF mock,1,1.7999999999999998
+motor-Test on SF mock-Tester2,2026-09-30,2026-10-03,Tester2,test,motor,Test on SF mock,1,1.7999999999999998
+motor-Test on SF mock-Tester3,2026-09-30,2026-10-03,Tester3,test,motor,Test on SF mock,1,1.7999999999999998
+gwse-BI fac 2 T360Next-Developer3,2026-09-04,2026-10-16,Developer3,dev,gwse,BI fac 2 T360Next,1,18.0
+gwse-BI fac 2 T360Next-Developer4,2026-09-04,2026-10-16,Developer4,dev,gwse,BI fac 2 T360Next,1,18.0
+grus-Test of MM-Developer2,2026-10-22,2026-11-21,Developer2,dev,grus,Test of MM,1,13.2
+grus-Test of MM-Developer12,2026-10-22,2026-11-21,Developer12,dev,grus,Test of MM,1,13.2
+warranty-Test of SF-Developer10,2026-11-06,2026-11-19,Developer10,dev,warranty,Test of SF,1,5.3999999999999995
+warranty-Test of SF-Developer11,2026-11-06,2026-11-19,Developer11,dev,warranty,Test of SF,1,5.3999999999999995
+warranty-Test of SF-Developer9,2026-11-06,2026-11-19,Developer9,dev,warranty,Test of SF,1,5.3999999999999995
+warranty-Test of SF-Developer13,2026-11-06,2026-11-19,Developer13,dev,warranty,Test of SF,1,5.3999999999999995
+motor-Real data 2 SF-Developer8,2026-10-09,2026-11-26,Developer8,dev,motor,Real data 2 SF,1,20.4
+gwse-Test on SF mock-Tester1,2026-10-16,2026-10-21,Tester1,test,gwse,Test on SF mock,1,1.7999999999999998
+gwse-Test on SF mock-Tester2,2026-10-16,2026-10-21,Tester2,test,gwse,Test on SF mock,1,1.7999999999999998
+gwse-Test on SF mock-Tester3,2026-10-16,2026-10-21,Tester3,test,gwse,Test on SF mock,1,1.7999999999999998
+grus-Test of other marts-Developer3,2026-11-23,2026-12-23,Developer3,dev,grus,Test of other marts,1,13.2
+grus-Test of other marts-Developer4,2026-11-23,2026-12-23,Developer4,dev,grus,Test of other marts,1,13.2
+warranty-Test of MM-Developer5,2026-11-19,2026-12-19,Developer5,dev,warranty,Test of MM,1,13.2
+warranty-Test of MM-Developer6,2026-11-19,2026-12-19,Developer6,dev,warranty,Test of MM,1,13.2
+motor-Test of SF-Developer7,2026-11-26,2026-12-09,Developer7,dev,motor,Test of SF,1,5.3999999999999995
+motor-Test of SF-Developer14,2026-11-26,2026-12-09,Developer14,dev,motor,Test of SF,1,5.3999999999999995
+motor-Test of SF-Developer1,2026-11-26,2026-12-09,Developer1,dev,motor,Test of SF,1,5.3999999999999995
+motor-Test of SF-Developer9,2026-11-26,2026-12-09,Developer9,dev,motor,Test of SF,1,5.3999999999999995
+gwse-Real data 2 SF-Developer10,2026-11-19,2027-01-06,Developer10,dev,gwse,Real data 2 SF,1,20.4
+warranty-Test of other marts-Developer11,2026-12-21,2027-01-20,Developer11,dev,warranty,Test of other marts,1,13.2
+warranty-Test of other marts-Developer13,2026-12-21,2027-01-20,Developer13,dev,warranty,Test of other marts,1,13.2
+motor-Test of MM-Developer2,2026-12-09,2027-01-08,Developer2,dev,motor,Test of MM,1,13.2
+motor-Test of MM-Developer12,2026-12-09,2027-01-08,Developer12,dev,motor,Test of MM,1,13.2
+gwse-Test of SF-Developer8,2027-01-06,2027-01-19,Developer8,dev,gwse,Test of SF,1,5.3999999999999995
+gwse-Test of SF-Developer1,2027-01-06,2027-01-19,Developer1,dev,gwse,Test of SF,1,5.3999999999999995
+gwse-Test of SF-Developer7,2027-01-06,2027-01-19,Developer7,dev,gwse,Test of SF,1,5.3999999999999995
+gwse-Test of SF-Developer9,2027-01-06,2027-01-19,Developer9,dev,gwse,Test of SF,1,5.3999999999999995
+clan-T360 2 T360Next-Developer14,2026-12-21,2027-01-06,Developer14,dev,clan,T360 2 T360Next,1,7.199999999999999
+clan-T360 2 T360Next-Developer5,2026-12-21,2027-01-06,Developer5,dev,clan,T360 2 T360Next,1,7.199999999999999
+clan-T360 2 T360Next-Developer6,2026-12-21,2027-01-06,Developer6,dev,clan,T360 2 T360Next,1,7.199999999999999
+motor-Test of other marts-Developer3,2027-01-08,2027-02-07,Developer3,dev,motor,Test of other marts,1,12.6
+motor-Test of other marts-Developer4,2027-01-08,2027-02-07,Developer4,dev,motor,Test of other marts,1,12.6
+gwse-Test of MM-Developer5,2027-01-19,2027-02-18,Developer5,dev,gwse,Test of MM,1,13.2
+gwse-Test of MM-Developer6,2027-01-19,2027-02-18,Developer6,dev,gwse,Test of MM,1,13.2
+clan-BI fac 2 T360Next-Developer10,2027-01-06,2027-02-17,Developer10,dev,clan,BI fac 2 T360Next,1,18.0
+clan-BI fac 2 T360Next-Developer14,2027-01-06,2027-02-17,Developer14,dev,clan,BI fac 2 T360Next,1,18.0
+mdb-T360 2 T360Next-Developer2,2027-01-19,2027-02-04,Developer2,dev,mdb,T360 2 T360Next,1,7.199999999999999
+mdb-T360 2 T360Next-Developer12,2027-01-19,2027-02-04,Developer12,dev,mdb,T360 2 T360Next,1,7.199999999999999
+mdb-T360 2 T360Next-Developer1,2027-01-19,2027-02-04,Developer1,dev,mdb,T360 2 T360Next,1,7.199999999999999
+gwse-Test of other marts-Developer7,2027-02-18,2027-03-20,Developer7,dev,gwse,Test of other marts,1,13.2
+gwse-Test of other marts-Developer8,2027-02-18,2027-03-20,Developer8,dev,gwse,Test of other marts,1,13.2
+clan-Test on SF mock-Tester1,2027-02-17,2027-02-20,Tester1,test,clan,Test on SF mock,1,1.7999999999999998
+clan-Test on SF mock-Tester2,2027-02-17,2027-02-20,Tester2,test,clan,Test on SF mock,1,1.7999999999999998
+clan-Test on SF mock-Tester3,2027-02-17,2027-02-20,Tester3,test,clan,Test on SF mock,1,1.7999999999999998
+mdb-BI fac 2 T360Next-Developer9,2027-02-04,2027-03-18,Developer9,dev,mdb,BI fac 2 T360Next,1,18.0
+mdb-BI fac 2 T360Next-Developer11,2027-02-04,2027-03-18,Developer11,dev,mdb,BI fac 2 T360Next,1,18.0
+tia-T360 2 T360Next-Developer13,2027-02-08,2027-02-27,Developer13,dev,tia,T360 2 T360Next,1,9.0
+tia-T360 2 T360Next-Developer1,2027-02-08,2027-02-27,Developer1,dev,tia,T360 2 T360Next,1,9.0
+tia-T360 2 T360Next-Developer2,2027-02-08,2027-02-27,Developer2,dev,tia,T360 2 T360Next,1,9.0
+tia-T360 2 T360Next-Developer12,2027-02-08,2027-02-27,Developer12,dev,tia,T360 2 T360Next,1,9.0
+tia-T360 2 T360Next-Developer3,2027-02-08,2027-02-27,Developer3,dev,tia,T360 2 T360Next,1,9.0
+clan-Real data 2 SF-Developer4,2027-02-22,2027-04-09,Developer4,dev,clan,Real data 2 SF,1,20.4
+mdb-Test on SF mock-Tester1,2027-03-18,2027-03-23,Tester1,test,mdb,Test on SF mock,1,1.7999999999999998
+mdb-Test on SF mock-Tester2,2027-03-18,2027-03-23,Tester2,test,mdb,Test on SF mock,1,1.7999999999999998
+mdb-Test on SF mock-Tester3,2027-03-18,2027-03-23,Tester3,test,mdb,Test on SF mock,1,1.7999999999999998
+tia-BI fac 2 T360Next-Developer10,2027-03-01,2027-04-28,Developer10,dev,tia,BI fac 2 T360Next,1,25.2
+tia-BI fac 2 T360Next-Developer14,2027-03-01,2027-04-28,Developer14,dev,tia,BI fac 2 T360Next,1,25.2
+tia-BI fac 2 T360Next-Developer5,2027-03-01,2027-04-28,Developer5,dev,tia,BI fac 2 T360Next,1,25.2
+tia-BI fac 2 T360Next-Developer6,2027-03-01,2027-04-28,Developer6,dev,tia,BI fac 2 T360Next,1,25.2
+fks-T360 2 T360Next-Developer1,2027-03-01,2027-03-17,Developer1,dev,fks,T360 2 T360Next,1,7.199999999999999
+fks-T360 2 T360Next-Developer2,2027-03-01,2027-03-17,Developer2,dev,fks,T360 2 T360Next,1,7.199999999999999
+fks-T360 2 T360Next-Developer3,2027-03-01,2027-03-17,Developer3,dev,fks,T360 2 T360Next,1,7.199999999999999
+clan-Test of SF-Developer12,2027-04-09,2027-04-22,Developer12,dev,clan,Test of SF,1,5.3999999999999995
+clan-Test of SF-Developer13,2027-04-09,2027-04-22,Developer13,dev,clan,Test of SF,1,5.3999999999999995
+clan-Test of SF-Developer1,2027-04-09,2027-04-22,Developer1,dev,clan,Test of SF,1,5.3999999999999995
+clan-Test of SF-Developer2,2027-04-09,2027-04-22,Developer2,dev,clan,Test of SF,1,5.3999999999999995
+mdb-Real data 2 SF-Developer3,2027-03-23,2027-05-08,Developer3,dev,mdb,Real data 2 SF,1,20.4
+tia-Test on SF mock-Tester1,2027-04-28,2027-05-01,Tester1,test,tia,Test on SF mock,1,1.7999999999999998
+tia-Test on SF mock-Tester2,2027-04-28,2027-05-01,Tester2,test,tia,Test on SF mock,1,1.7999999999999998
+tia-Test on SF mock-Tester3,2027-04-28,2027-05-01,Tester3,test,tia,Test on SF mock,1,1.7999999999999998
+fks-BI fac 2 T360Next-Developer9,2027-03-18,2027-04-29,Developer9,dev,fks,BI fac 2 T360Next,1,18.0
+fks-BI fac 2 T360Next-Developer11,2027-03-18,2027-04-29,Developer11,dev,fks,BI fac 2 T360Next,1,18.0
+clan-Test of MM-Developer7,2027-04-22,2027-05-22,Developer7,dev,clan,Test of MM,1,13.2
+clan-Test of MM-Developer8,2027-04-22,2027-05-22,Developer8,dev,clan,Test of MM,1,13.2
+mdb-Test of SF-Developer4,2027-05-10,2027-05-21,Developer4,dev,mdb,Test of SF,1,5.3999999999999995
+mdb-Test of SF-Developer1,2027-05-10,2027-05-21,Developer1,dev,mdb,Test of SF,1,5.3999999999999995
+mdb-Test of SF-Developer2,2027-05-10,2027-05-21,Developer2,dev,mdb,Test of SF,1,5.3999999999999995
+mdb-Test of SF-Developer12,2027-05-10,2027-05-21,Developer12,dev,mdb,Test of SF,1,5.3999999999999995
+tia-Real data 2 SF-Developer13,2027-05-03,2027-06-18,Developer13,dev,tia,Real data 2 SF,1,20.4
+tia-Real data 2 SF-Developer5,2027-05-03,2027-06-18,Developer5,dev,tia,Real data 2 SF,1,20.4
+fks-Test on SF mock-Tester1,2027-05-03,2027-05-06,Tester1,test,fks,Test on SF mock,1,1.7999999999999998
+fks-Test on SF mock-Tester2,2027-05-03,2027-05-06,Tester2,test,fks,Test on SF mock,1,1.7999999999999998
+fks-Test on SF mock-Tester3,2027-05-03,2027-05-06,Tester3,test,fks,Test on SF mock,1,1.7999999999999998
+clan-Test of other marts-Developer6,2027-05-24,2027-06-23,Developer6,dev,clan,Test of other marts,1,13.2
+clan-Test of other marts-Developer10,2027-05-24,2027-06-23,Developer10,dev,clan,Test of other marts,1,13.2
+mdb-Test of MM-Developer14,2027-05-21,2027-06-20,Developer14,dev,mdb,Test of MM,1,12.6
+mdb-Test of MM-Developer9,2027-05-21,2027-06-20,Developer9,dev,mdb,Test of MM,1,12.6
+tia-Test of SF-Developer11,2027-06-18,2027-07-02,Developer11,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer3,2027-06-18,2027-07-02,Developer3,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer1,2027-06-18,2027-07-02,Developer1,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer2,2027-06-18,2027-07-02,Developer2,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer4,2027-06-18,2027-07-02,Developer4,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer12,2027-06-18,2027-07-02,Developer12,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer7,2027-06-18,2027-07-02,Developer7,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer8,2027-06-18,2027-07-02,Developer8,dev,tia,Test of SF,1,6.0
+tia-Test of SF-Developer5,2027-06-18,2027-07-02,Developer5,dev,tia,Test of SF,1,6.0
+fks-Real data 2 SF-Developer13,2027-06-18,2027-08-05,Developer13,dev,fks,Real data 2 SF,1,20.4
+mdb-Test of other marts-Developer9,2027-06-21,2027-07-21,Developer9,dev,mdb,Test of other marts,1,13.2
+mdb-Test of other marts-Developer14,2027-06-21,2027-07-21,Developer14,dev,mdb,Test of other marts,1,13.2
+tia-Test of MM-Developer6,2027-07-02,2027-08-11,Developer6,dev,tia,Test of MM,1,16.8
+tia-Test of MM-Developer10,2027-07-02,2027-08-11,Developer10,dev,tia,Test of MM,1,16.8
+tia-Test of MM-Developer1,2027-07-02,2027-08-11,Developer1,dev,tia,Test of MM,1,16.8
+fks-Test of SF-Developer2,2027-08-05,2027-08-18,Developer2,dev,fks,Test of SF,1,5.3999999999999995
+fks-Test of SF-Developer3,2027-08-05,2027-08-18,Developer3,dev,fks,Test of SF,1,5.3999999999999995
+fks-Test of SF-Developer4,2027-08-05,2027-08-18,Developer4,dev,fks,Test of SF,1,5.3999999999999995
+fks-Test of SF-Developer5,2027-08-05,2027-08-18,Developer5,dev,fks,Test of SF,1,5.3999999999999995
+gwdk-CTM-Developer7,2027-08-05,2027-10-14,Developer7,dev,gwdk,CTM,1,30.0
+gwdk-CTM-Developer8,2027-08-05,2027-10-14,Developer8,dev,gwdk,CTM,1,30.0
+gwdk-CTM-Developer11,2027-08-05,2027-10-14,Developer11,dev,gwdk,CTM,1,30.0
+gwdk-CTM-Developer12,2027-08-05,2027-10-14,Developer12,dev,gwdk,CTM,1,30.0
+gwdk-CTM-Developer13,2027-08-05,2027-10-14,Developer13,dev,gwdk,CTM,1,30.0
+tia-Test of other marts-Developer9,2027-08-11,2027-09-18,Developer9,dev,tia,Test of other marts,1,16.8
+tia-Test of other marts-Developer14,2027-08-11,2027-09-18,Developer14,dev,tia,Test of other marts,1,16.8
+tia-Test of other marts-Developer1,2027-08-11,2027-09-18,Developer1,dev,tia,Test of other marts,1,16.8
+fks-Test of MM-Developer6,2027-08-18,2027-09-17,Developer6,dev,fks,Test of MM,1,13.2
+fks-Test of MM-Developer10,2027-08-18,2027-09-17,Developer10,dev,fks,Test of MM,1,13.2
+gwdk-CTM to SF-Developer2,2027-10-14,2027-10-21,Developer2,dev,gwdk,CTM to SF,1,3.0
+gwdk-CTM to SF-Developer3,2027-10-14,2027-10-21,Developer3,dev,gwdk,CTM to SF,1,3.0
+gwdk-CTM to SF-Developer4,2027-10-14,2027-10-21,Developer4,dev,gwdk,CTM to SF,1,3.0
+gwdk-CTM to SF-Developer5,2027-10-14,2027-10-21,Developer5,dev,gwdk,CTM to SF,1,3.0
+gwaff-CTM-Developer7,2027-10-14,2028-01-12,Developer7,dev,gwaff,CTM,1,38.4
+gwaff-CTM-Developer8,2027-10-14,2028-01-12,Developer8,dev,gwaff,CTM,1,38.4
+gwaff-CTM-Developer11,2027-10-14,2028-01-12,Developer11,dev,gwaff,CTM,1,38.4
+gwaff-CTM-Developer12,2027-10-14,2028-01-12,Developer12,dev,gwaff,CTM,1,38.4
+gwaff-CTM-Developer13,2027-10-14,2028-01-12,Developer13,dev,gwaff,CTM,1,38.4
+fks-Test of other marts-Developer6,2027-09-17,2027-10-17,Developer6,dev,fks,Test of other marts,1,12.6
+fks-Test of other marts-Developer10,2027-09-17,2027-10-17,Developer10,dev,fks,Test of other marts,1,12.6
+gwdk-Test on SF mock-Tester1,2027-10-21,2027-10-26,Tester1,test,gwdk,Test on SF mock,1,1.7999999999999998
+gwdk-Test on SF mock-Tester2,2027-10-21,2027-10-26,Tester2,test,gwdk,Test on SF mock,1,1.7999999999999998
+gwdk-Test on SF mock-Tester3,2027-10-21,2027-10-26,Tester3,test,gwdk,Test on SF mock,1,1.7999999999999998
+gwaff-CTM to SF-Developer1,2028-01-12,2028-01-19,Developer1,dev,gwaff,CTM to SF,1,3.0
+gwaff-CTM to SF-Developer9,2028-01-12,2028-01-19,Developer9,dev,gwaff,CTM to SF,1,3.0
+gwaff-CTM to SF-Developer14,2028-01-12,2028-01-19,Developer14,dev,gwaff,CTM to SF,1,3.0
+gwaff-CTM to SF-Developer2,2028-01-12,2028-01-19,Developer2,dev,gwaff,CTM to SF,1,3.0
+gwno-CTM-Developer3,2028-01-12,2028-02-25,Developer3,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer4,2028-01-12,2028-02-25,Developer4,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer5,2028-01-12,2028-02-25,Developer5,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer7,2028-01-12,2028-02-25,Developer7,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer8,2028-01-12,2028-02-25,Developer8,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer11,2028-01-12,2028-02-25,Developer11,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer12,2028-01-12,2028-02-25,Developer12,dev,gwno,CTM,1,19.2
+gwno-CTM-Developer13,2028-01-12,2028-02-25,Developer13,dev,gwno,CTM,1,19.2
+gwdk-Real data 2 SF-Developer6,2027-10-26,2027-12-11,Developer6,dev,gwdk,Real data 2 SF,1,20.4
+gwdk-Real data 2 SF-Developer10,2027-10-26,2027-12-11,Developer10,dev,gwdk,Real data 2 SF,1,20.4
+gwaff-Test on SF mock-Tester1,2028-01-19,2028-01-22,Tester1,test,gwaff,Test on SF mock,1,1.7999999999999998
+gwaff-Test on SF mock-Tester2,2028-01-19,2028-01-22,Tester2,test,gwaff,Test on SF mock,1,1.7999999999999998
+gwaff-Test on SF mock-Tester3,2028-01-19,2028-01-22,Tester3,test,gwaff,Test on SF mock,1,1.7999999999999998
+gwno-CTM to SF-Developer1,2028-02-25,2028-03-03,Developer1,dev,gwno,CTM to SF,1,3.0
+gwno-CTM to SF-Developer2,2028-02-25,2028-03-03,Developer2,dev,gwno,CTM to SF,1,3.0
+gwno-CTM to SF-Developer9,2028-02-25,2028-03-03,Developer9,dev,gwno,CTM to SF,1,3.0
+gwno-CTM to SF-Developer14,2028-02-25,2028-03-03,Developer14,dev,gwno,CTM to SF,1,3.0
+kn-CTM-Developer3,2028-02-25,2028-04-11,Developer3,dev,kn,CTM,1,19.2
+kn-CTM-Developer4,2028-02-25,2028-04-11,Developer4,dev,kn,CTM,1,19.2
+kn-CTM-Developer5,2028-02-25,2028-04-11,Developer5,dev,kn,CTM,1,19.2
+kn-CTM-Developer7,2028-02-25,2028-04-11,Developer7,dev,kn,CTM,1,19.2
+kn-CTM-Developer8,2028-02-25,2028-04-11,Developer8,dev,kn,CTM,1,19.2
+kn-CTM-Developer11,2028-02-25,2028-04-11,Developer11,dev,kn,CTM,1,19.2
+kn-CTM-Developer12,2028-02-25,2028-04-11,Developer12,dev,kn,CTM,1,19.2
+kn-CTM-Developer13,2028-02-25,2028-04-11,Developer13,dev,kn,CTM,1,19.2
+gwdk-Test of SF-Developer6,2028-03-03,2028-03-17,Developer6,dev,gwdk,Test of SF,1,6.0
+gwdk-Test of SF-Developer10,2028-03-03,2028-03-17,Developer10,dev,gwdk,Test of SF,1,6.0
+gwdk-Test of SF-Developer1,2028-03-03,2028-03-17,Developer1,dev,gwdk,Test of SF,1,6.0
+gwdk-Test of SF-Developer2,2028-03-03,2028-03-17,Developer2,dev,gwdk,Test of SF,1,6.0
+gwdk-Test of SF-Developer9,2028-03-03,2028-03-17,Developer9,dev,gwdk,Test of SF,1,6.0
+gwaff-Real data 2 SF-Developer14,2028-04-11,2028-05-27,Developer14,dev,gwaff,Real data 2 SF,1,20.4
+gwaff-Real data 2 SF-Developer3,2028-04-11,2028-05-27,Developer3,dev,gwaff,Real data 2 SF,1,20.4
+gwno-Test on SF mock-Tester1,2028-03-03,2028-03-08,Tester1,test,gwno,Test on SF mock,1,1.7999999999999998
+gwno-Test on SF mock-Tester2,2028-03-03,2028-03-08,Tester2,test,gwno,Test on SF mock,1,1.7999999999999998
+gwno-Test on SF mock-Tester3,2028-03-03,2028-03-08,Tester3,test,gwno,Test on SF mock,1,1.7999999999999998
+kn-CTM to SF-Developer4,2028-04-11,2028-04-18,Developer4,dev,kn,CTM to SF,1,3.0
+kn-CTM to SF-Developer5,2028-04-11,2028-04-18,Developer5,dev,kn,CTM to SF,1,3.0
+kn-CTM to SF-Developer7,2028-04-11,2028-04-18,Developer7,dev,kn,CTM to SF,1,3.0
+kn-CTM to SF-Developer8,2028-04-11,2028-04-18,Developer8,dev,kn,CTM to SF,1,3.0
+gwdk-Test of MM-Developer1,2028-03-17,2028-04-21,Developer1,dev,gwdk,Test of MM,1,15.0
+gwdk-Test of MM-Developer2,2028-03-17,2028-04-21,Developer2,dev,gwdk,Test of MM,1,15.0
+gwaff-Test of SF-Developer6,2028-05-29,2028-06-10,Developer6,dev,gwaff,Test of SF,1,6.0
+gwaff-Test of SF-Developer9,2028-05-29,2028-06-10,Developer9,dev,gwaff,Test of SF,1,6.0
+gwaff-Test of SF-Developer10,2028-05-29,2028-06-10,Developer10,dev,gwaff,Test of SF,1,6.0
+gwaff-Test of SF-Developer11,2028-05-29,2028-06-10,Developer11,dev,gwaff,Test of SF,1,6.0
+gwaff-Test of SF-Developer12,2028-05-29,2028-06-10,Developer12,dev,gwaff,Test of SF,1,6.0
+gwno-Real data 2 SF-Developer13,2028-04-18,2028-06-03,Developer13,dev,gwno,Real data 2 SF,1,20.4
+gwno-Real data 2 SF-Developer4,2028-04-18,2028-06-03,Developer4,dev,gwno,Real data 2 SF,1,20.4
+kn-Test on SF mock-Tester1,2028-04-18,2028-04-21,Tester1,test,kn,Test on SF mock,1,1.7999999999999998
+kn-Test on SF mock-Tester2,2028-04-18,2028-04-21,Tester2,test,kn,Test on SF mock,1,1.7999999999999998
+kn-Test on SF mock-Tester3,2028-04-18,2028-04-21,Tester3,test,kn,Test on SF mock,1,1.7999999999999998
+gwdk-Test of other marts-Developer5,2028-04-21,2028-05-26,Developer5,dev,gwdk,Test of other marts,1,15.0
+gwdk-Test of other marts-Developer7,2028-04-21,2028-05-26,Developer7,dev,gwdk,Test of other marts,1,15.0
+gwaff-Test of MM-Developer8,2028-06-12,2028-07-15,Developer8,dev,gwaff,Test of MM,1,15.0
+gwaff-Test of MM-Developer1,2028-06-12,2028-07-15,Developer1,dev,gwaff,Test of MM,1,15.0
+gwno-Test of SF-Developer2,2028-06-05,2028-06-17,Developer2,dev,gwno,Test of SF,1,6.0
+gwno-Test of SF-Developer3,2028-06-05,2028-06-17,Developer3,dev,gwno,Test of SF,1,6.0
+gwno-Test of SF-Developer14,2028-06-05,2028-06-17,Developer14,dev,gwno,Test of SF,1,6.0
+gwno-Test of SF-Developer4,2028-06-05,2028-06-17,Developer4,dev,gwno,Test of SF,1,6.0
+gwno-Test of SF-Developer13,2028-06-05,2028-06-17,Developer13,dev,gwno,Test of SF,1,6.0
+kn-Real data 2 SF-Developer6,2028-06-12,2028-07-28,Developer6,dev,kn,Real data 2 SF,1,20.4
+kn-Real data 2 SF-Developer9,2028-06-12,2028-07-28,Developer9,dev,kn,Real data 2 SF,1,20.4
+gwaff-Test of other marts-Developer5,2028-07-17,2028-08-19,Developer5,dev,gwaff,Test of other marts,1,15.0
+gwaff-Test of other marts-Developer7,2028-07-17,2028-08-19,Developer7,dev,gwaff,Test of other marts,1,15.0
+gwno-Test of MM-Developer10,2028-06-19,2028-07-22,Developer10,dev,gwno,Test of MM,1,15.0
+gwno-Test of MM-Developer11,2028-06-19,2028-07-22,Developer11,dev,gwno,Test of MM,1,15.0
+kn-Test of SF-Developer12,2028-07-28,2028-08-11,Developer12,dev,kn,Test of SF,1,6.0
+kn-Test of SF-Developer2,2028-07-28,2028-08-11,Developer2,dev,kn,Test of SF,1,6.0
+kn-Test of SF-Developer3,2028-07-28,2028-08-11,Developer3,dev,kn,Test of SF,1,6.0
+kn-Test of SF-Developer4,2028-07-28,2028-08-11,Developer4,dev,kn,Test of SF,1,6.0
+kn-Test of SF-Developer13,2028-07-28,2028-08-11,Developer13,dev,kn,Test of SF,1,6.0
+gwno-Test of other marts-Developer14,2028-07-24,2028-08-26,Developer14,dev,gwno,Test of other marts,1,15.0
+gwno-Test of other marts-Developer1,2028-07-24,2028-08-26,Developer1,dev,gwno,Test of other marts,1,15.0
+kn-Test of MM-Developer8,2028-08-11,2028-09-15,Developer8,dev,kn,Test of MM,1,15.0
+kn-Test of MM-Developer10,2028-08-11,2028-09-15,Developer10,dev,kn,Test of MM,1,15.0
+kn-Test of other marts-Developer11,2028-09-15,2028-10-20,Developer11,dev,kn,Test of other marts,1,15.0
+kn-Test of other marts-Developer6,2028-09-15,2028-10-20,Developer6,dev,kn,Test of other marts,1,15.0

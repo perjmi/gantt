@@ -795,6 +795,13 @@ def project():
     print(df_converted)
     print("\nConverted FTE values:", df_converted["FTE"].unique())
     
+    # Save task lists to CSV files
+    df.to_csv('tasks_detailed.csv', index=False)
+    df_converted.to_csv('tasks_converted.csv', index=False)
+    print("\nTask lists saved to CSV files:")
+    print("1. tasks_detailed.csv - Detailed individual tasks with resource assignments")
+    print("2. tasks_converted.csv - Converted tasks grouped by System/ResourceType/Milestone")
+    
     # Save all three charts as PNG files
     plottasksonproject(df_converted, save_as_png=True, filename="gantt_project_tasks.png")
     plot_system_summary(df, save_as_png=True, filename="gantt_system_summary.png")
