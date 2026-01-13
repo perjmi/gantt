@@ -136,25 +136,51 @@ systemmilestones.append(
 )
 
 ressources = [
-    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1'},
-    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2'},
-    {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3'},
-    {'ftetype':'dev','unitcostprday':1050,'availability':0.6,'ressourcename':'Developer4'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer5'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer6'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer7'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer8'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer9'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer10'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer11'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer12'},
-    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer13'},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer14'},
-    {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1'},
-    {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2'},
-    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3'}
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1050,'availability':0.6,'ressourcename':'Developer4','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer5','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer6','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer7','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer8','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer9','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer10','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer11','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer12','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer13','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer14','onboardingday':0},
+    {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1','onboardingday':0},
+    {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2','onboardingday':0},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3','onboardingday':0}
 ]
 
+##Adding more resources with onboarding delay
+ressources = [
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1050,'availability':0.6,'ressourcename':'Developer4','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer5','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer6','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer7','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer8','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer9','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer10','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer11','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer12','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer13','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer14','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer15','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer16','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer17','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer18','onboardingday':90},
+    {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1','onboardingday':0},
+    {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2','onboardingday':0},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3','onboardingday':0},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester4','onboardingday':90},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester5','onboardingday':90}
+]
 
 def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in_progress=3):
     """
@@ -204,9 +230,13 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
     
     # Track when each resource becomes available (ensure start is a workday)
     resource_availability = {}
-    start_date = next_workday(parse_date(starttime))
+    project_start_date = parse_date(starttime)
+
     for res in ressources:
-        resource_availability[res['ressourcename']] = start_date
+        # Calculate specific start date for this resource based on onboardingday
+        onboarding_days = res.get('onboardingday', 0)
+        res_start = project_start_date + timedelta(days=onboarding_days)
+        resource_availability[res['ressourcename']] = next_workday(res_start)
     
     tasks = []
     
@@ -569,7 +599,7 @@ def project():
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=5)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
