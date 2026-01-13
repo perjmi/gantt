@@ -512,14 +512,59 @@ def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.pn
     # Create text showing workdays
     system_summary['Text'] = system_summary['TotalWorkdays'].apply(lambda x: f'{x:.0f} wd')
     
+    # Map systems to countries
+    system_country_map = {s['name']: s['country'] for s in systems}
+    system_summary['Country'] = system_summary['System'].map(system_country_map)
+    
+    # Define flag URLs and colors
+    flag_urls = {
+        'dk': 'https://flagcdn.com/w320/dk.png',
+        'se': 'https://flagcdn.com/w320/se.png',
+        'no': 'https://flagcdn.com/w320/no.png'
+    }
+    
+    # Set colors: transparent for countries with flags (to show flag), default for others
+    country_colors = {
+        'dk': 'rgba(0,0,0,0)',
+        'se': 'rgba(0,0,0,0)',
+        'no': 'rgba(0,0,0,0)',
+        'all': '#636EFA'
+    }
+
     fig = px.timeline(
         system_summary,
         x_start="Start",
         x_end="Finish",
         y="System",
-        color="System",
+        color="Country",
+        color_discrete_map=country_colors,
         text="Text"
     )
+    
+    # Add flag images
+    for i, row in system_summary.iterrows():
+        country = row.get('Country')
+        if country in flag_urls:
+            # Calculate duration in milliseconds for sizex
+            duration_ms = (row['Finish'] - row['Start']).total_seconds() * 1000
+            
+            fig.add_layout_image(
+                dict(
+                    source=flag_urls[country],
+                    xref="x",
+                    yref="y",
+                    x=row['Start'],
+                    y=row['System'],
+                    sizex=duration_ms,
+                    sizey=row['BoxHeight_scaled'],
+                    sizing="stretch",
+                    opacity=1.0,
+                    layer="below",
+                    xanchor="left",
+                    yanchor="middle"
+                )
+            )
+
     fig.update_yaxes(autorange="reversed")
     fig.update_traces(
         textposition="inside",
