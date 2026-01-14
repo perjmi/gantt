@@ -192,8 +192,7 @@ ressources = [
     {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester6','onboardingday':180}
 ]
 
-
-ressources1 = [
+ressources = [
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
     {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
@@ -212,6 +211,20 @@ ressources1 = [
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer16','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer17','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer18','onboardingday':90}
+]
+
+ressources = [
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1050,'availability':0.6,'ressourcename':'Developer4','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer5','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer6','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer7','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer8','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer9','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer10','onboardingday':0},
+    {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer11','onboardingday':0} 
 ]
 
 def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in_progress=3):

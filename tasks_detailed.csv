@@ -1,134 +1,119 @@
 Task,Start,Finish,Resource,ResourceType,System,Milestone,FTE,EffectivePersonDays
-hac-Test on SF mock-dev,2025-11-06,2025-11-25,dev,dev,hac,Test on SF mock,1,5.1999999999999815
 hac-T360 2 T360Next-dev,2025-11-04,2025-12-02,dev,dev,hac,T360 2 T360Next,1,20.0
 sol-T360 2 T360Next-dev,2025-11-04,2025-12-02,dev,dev,sol,T360 2 T360Next,1,20.0
 prosit-T360 2 T360Next-dev,2025-11-04,2025-12-02,dev,dev,prosit,T360 2 T360Next,1,20.0
-bif-Test on SF mock-dev,2025-11-06,2025-12-05,dev,dev,bif,Test on SF mock,1,4.999999999999993
-prosit-Test on SF mock-dev,2025-11-06,2025-12-09,dev,dev,prosit,Test on SF mock,1,5.0
 sol-Test on SF mock-dev,2025-11-06,2025-12-09,dev,dev,sol,Test on SF mock,1,5.0
-hac-BI fac 2 T360Next-dev,2025-11-05,2025-12-17,dev,dev,hac,BI fac 2 T360Next,1,30.0
-prosit-BI fac 2 T360Next-dev,2025-11-05,2025-12-17,dev,dev,prosit,BI fac 2 T360Next,1,30.0
+bif-Test on SF mock-dev,2025-11-06,2025-12-11,dev,dev,bif,Test on SF mock,1,4.999999999999994
 sol-BI fac 2 T360Next-dev,2025-11-05,2025-12-17,dev,dev,sol,BI fac 2 T360Next,1,30.0
-hac-Test of SF-dev,2025-11-25,2025-12-30,dev,dev,hac,Test of SF,1,15.0
-hac-Real data 2 SF-dev,2025-11-07,2026-01-01,dev,dev,hac,Real data 2 SF,1,20.199999999999996
-bif-Test of SF-dev,2025-12-02,2026-01-07,dev,dev,bif,Test of SF,1,15.0
-hac-Test of MM-dev,2025-12-02,2026-01-12,dev,dev,hac,Test of MM,1,20.39999999999999
-prosit-Real data 2 SF-dev,2025-12-02,2026-01-14,dev,dev,prosit,Real data 2 SF,1,20.0
-hac-Test of other marts-dev,2025-12-05,2026-01-22,dev,dev,hac,Test of other marts,1,20.599999999999987
-prosit-Test of SF-dev,2025-12-09,2026-01-27,dev,dev,prosit,Test of SF,1,15.599999999999994
-prosit-Test of MM-dev,2025-12-17,2026-02-11,dev,dev,prosit,Test of MM,1,20.799999999999997
-sol-Real data 2 SF-dev,2025-12-17,2026-02-17,dev,dev,sol,Real data 2 SF,1,20.39999999999999
-sol-Test of SF-dev,2026-01-01,2026-02-19,dev,dev,sol,Test of SF,1,15.199999999999996
-prosit-Test of other marts-dev,2025-12-30,2026-02-23,dev,dev,prosit,Test of other marts,1,20.199999999999996
-axapta-Test on SF mock-dev,2026-01-27,2026-02-26,dev,dev,axapta,Test on SF mock,1,5.799999999999994
-sol-Test of MM-dev,2026-01-07,2026-02-27,dev,dev,sol,Test of MM,1,20.0
-sol-Test of other marts-dev,2026-01-12,2026-02-27,dev,dev,sol,Test of other marts,1,20.0
+prosit-Test on SF mock-dev,2025-11-06,2025-12-17,dev,dev,prosit,Test on SF mock,1,5.1999999999999975
+prosit-BI fac 2 T360Next-dev,2025-11-05,2025-12-29,dev,dev,prosit,BI fac 2 T360Next,1,30.399999999999974
+sol-Real data 2 SF-dev,2025-12-02,2026-01-12,dev,dev,sol,Real data 2 SF,1,20.399999999999995
+hac-BI fac 2 T360Next-dev,2025-11-05,2026-01-13,dev,dev,hac,BI fac 2 T360Next,1,30.0
+prosit-Real data 2 SF-dev,2025-12-02,2026-01-20,dev,dev,prosit,Real data 2 SF,1,20.79999999999999
+sol-Test of SF-dev,2025-12-09,2026-01-23,dev,dev,sol,Test of SF,1,14.999999999999988
+sol-Test of MM-dev,2025-12-11,2026-02-10,dev,dev,sol,Test of MM,1,20.599999999999998
+sol-Test of other marts-dev,2025-12-17,2026-02-12,dev,dev,sol,Test of other marts,1,19.999999999999993
+bif-Test of SF-dev,2025-12-17,2026-02-12,dev,dev,bif,Test of SF,1,15.799999999999997
+prosit-Test of SF-dev,2026-01-13,2026-03-05,dev,dev,prosit,Test of SF,1,15.0
 bif-CTM-dev,2025-11-04,2026-03-10,dev,dev,bif,CTM,1,90.0
-bif-Test of MM-dev,2025-12-09,2026-03-12,dev,dev,bif,Test of MM,1,50.8
-bif-Test of other marts-dev,2025-12-17,2026-03-20,dev,dev,bif,Test of other marts,1,50.199999999999996
-axapta-Test of SF-dev,2026-02-03,2026-03-20,dev,dev,axapta,Test of SF,1,15.0
+prosit-Test of MM-dev,2026-01-20,2026-03-20,dev,dev,prosit,Test of MM,1,19.999999999999982
+hac-Test on SF mock-dev,2026-02-10,2026-03-23,dev,dev,hac,Test on SF mock,1,5.79999999999999
 bif-CTM to SF-dev,2025-11-05,2026-03-25,dev,dev,bif,CTM to SF,1,100.0
-grus-T360 2 T360Next-dev,2026-02-02,2026-03-25,dev,dev,grus,T360 2 T360Next,1,20.19999999999999
-warranty-T360 2 T360Next-dev,2026-02-02,2026-03-27,dev,dev,warranty,T360 2 T360Next,1,20.4
-grus-Test on SF mock-dev,2026-02-19,2026-03-27,dev,dev,grus,Test on SF mock,1,5.0
-grus-Test of SF-dev,2026-02-26,2026-04-15,dev,dev,grus,Test of SF,1,15.0
-grus-BI fac 2 T360Next-dev,2026-02-03,2026-04-17,dev,dev,grus,BI fac 2 T360Next,1,30.799999999999976
-grus-Real data 2 SF-dev,2026-02-23,2026-04-21,dev,dev,grus,Real data 2 SF,1,20.19999999999999
-grus-Test of MM-dev,2026-02-27,2026-04-24,dev,dev,grus,Test of MM,1,20.799999999999994
-warranty-Test on SF mock-dev,2026-03-12,2026-04-24,dev,dev,warranty,Test on SF mock,1,5.799999999999994
-bif-Real data 2 SF-dev,2025-11-07,2026-04-28,dev,dev,bif,Real data 2 SF,1,100.8
-grus-Test of other marts-dev,2026-03-10,2026-05-06,dev,dev,grus,Test of other marts,1,20.19999999999996
-motor-Test on SF mock-dev,2026-03-27,2026-05-07,dev,dev,motor,Test on SF mock,1,5.19999999999999
-warranty-BI fac 2 T360Next-dev,2026-02-27,2026-05-08,dev,dev,warranty,BI fac 2 T360Next,1,30.0
-warranty-Real data 2 SF-dev,2026-03-20,2026-05-19,dev,dev,warranty,Real data 2 SF,1,20.799999999999994
-warranty-Test of SF-dev,2026-03-25,2026-05-19,dev,dev,warranty,Test of SF,1,15.799999999999994
-axapta-Test of MM-dev,2026-02-11,2026-05-21,dev,dev,axapta,Test of MM,1,50.8
-motor-T360 2 T360Next-dev,2026-03-20,2026-05-21,dev,dev,motor,T360 2 T360Next,1,20.19999999999999
-motor-Test of SF-dev,2026-04-17,2026-05-22,dev,dev,motor,Test of SF,1,14.999999999999984
-axapta-Test of other marts-dev,2026-02-17,2026-05-27,dev,dev,axapta,Test of other marts,1,50.39999999999998
-gwse-Test on SF mock-dev,2026-05-04,2026-05-28,dev,dev,gwse,Test on SF mock,1,4.999999999999995
-warranty-Test of MM-dev,2026-03-27,2026-05-29,dev,dev,warranty,Test of MM,1,20.0
-motor-Real data 2 SF-dev,2026-04-15,2026-05-29,dev,dev,motor,Real data 2 SF,1,20.0
-motor-Test of MM-dev,2026-04-21,2026-06-03,dev,dev,motor,Test of MM,1,19.999999999999993
-motor-Test of other marts-dev,2026-04-24,2026-06-04,dev,dev,motor,Test of other marts,1,19.999999999999993
-clan-Test on SF mock-dev,2026-05-05,2026-06-04,dev,dev,clan,Test on SF mock,1,4.999999999999995
-motor-BI fac 2 T360Next-dev,2026-03-25,2026-06-05,dev,dev,motor,BI fac 2 T360Next,1,30.0
-warranty-Test of other marts-dev,2026-04-24,2026-06-05,dev,dev,warranty,Test of other marts,1,19.999999999999964
-axapta-CTM-dev,2026-01-14,2026-06-12,dev,dev,axapta,CTM,1,90.19999999999997
-gwse-T360 2 T360Next-dev,2026-04-28,2026-06-16,dev,dev,gwse,T360 2 T360Next,1,20.0
-clan-T360 2 T360Next-dev,2026-05-03,2026-06-18,dev,dev,clan,T360 2 T360Next,1,20.0
-gwse-Test of SF-dev,2026-05-06,2026-06-19,dev,dev,gwse,Test of SF,1,15.0
-tosca-Test on SF mock-dev,2026-05-22,2026-06-19,dev,dev,tosca,Test on SF mock,1,4.999999999999989
-gwse-Real data 2 SF-dev,2026-05-05,2026-06-24,dev,dev,gwse,Real data 2 SF,1,19.999999999999993
-gwse-Test of MM-dev,2026-05-07,2026-06-26,dev,dev,gwse,Test of MM,1,19.999999999999986
-clan-Test of SF-dev,2026-05-21,2026-06-26,dev,dev,clan,Test of SF,1,14.999999999999973
-gwse-BI fac 2 T360Next-dev,2026-05-03,2026-06-30,dev,dev,gwse,BI fac 2 T360Next,1,29.99999999999999
-gwse-Test of other marts-dev,2026-05-08,2026-07-01,dev,dev,gwse,Test of other marts,1,19.999999999999993
-clan-Real data 2 SF-dev,2026-05-19,2026-07-02,dev,dev,clan,Real data 2 SF,1,20.0
-clan-BI fac 2 T360Next-dev,2026-05-04,2026-07-03,dev,dev,clan,BI fac 2 T360Next,1,29.999999999999986
-axapta-CTM to SF-dev,2026-01-22,2026-07-06,dev,dev,axapta,CTM to SF,1,100.6
-tosca-Test of SF-dev,2026-05-28,2026-07-09,dev,dev,tosca,Test of SF,1,14.999999999999995
-tia-Test on SF mock-dev,2026-06-16,2026-07-10,dev,dev,tia,Test on SF mock,1,4.999999999999995
-axapta-Real data 2 SF-dev,2026-02-02,2026-07-13,dev,dev,axapta,Real data 2 SF,1,100.8
-clan-Test of MM-dev,2026-05-29,2026-07-17,dev,dev,clan,Test of MM,1,19.999999999999986
-mdb-Test on SF mock-dev,2026-06-19,2026-07-17,dev,dev,mdb,Test on SF mock,1,4.999999999999995
-clan-Test of other marts-dev,2026-06-04,2026-07-24,dev,dev,clan,Test of other marts,1,20.0
-mdb-T360 2 T360Next-dev,2026-06-04,2026-07-24,dev,dev,mdb,T360 2 T360Next,1,19.99999999999999
-tia-Test of SF-dev,2026-06-19,2026-07-30,dev,dev,tia,Test of SF,1,14.999999999999995
-gwdk-Test on SF mock-test,2026-07-25,2026-07-31,test,test,gwdk,Test on SF mock,1,5.0
-mdb-BI fac 2 T360Next-dev,2026-06-05,2026-08-11,dev,dev,mdb,BI fac 2 T360Next,1,29.999999999999993
-mdb-Real data 2 SF-dev,2026-06-26,2026-08-14,dev,dev,mdb,Real data 2 SF,1,19.99999999999997
-mdb-Test of SF-dev,2026-06-30,2026-08-14,dev,dev,mdb,Test of SF,1,15.0
-mdb-Test of MM-dev,2026-07-01,2026-08-21,dev,dev,mdb,Test of MM,1,19.99999999999998
-fks-Test on SF mock-dev,2026-07-09,2026-08-21,dev,dev,fks,Test on SF mock,1,4.999999999999973
-mdb-Test of other marts-dev,2026-07-02,2026-08-27,dev,dev,mdb,Test of other marts,1,19.999999999999957
-tosca-Test of MM-dev,2026-05-29,2026-08-28,dev,dev,tosca,Test of MM,1,50.0
-tia-Test of other marts-dev,2026-06-26,2026-08-28,dev,dev,tia,Test of other marts,1,30.0
-tia-Real data 2 SF-dev,2026-06-18,2026-08-31,dev,dev,tia,Real data 2 SF,1,39.999999999999986
-tosca-Test of other marts-dev,2026-06-03,2026-09-02,dev,dev,tosca,Test of other marts,1,49.999999999999986
-tia-T360 2 T360Next-dev,2026-06-05,2026-09-02,dev,dev,tia,T360 2 T360Next,1,44.99999999999999
-fks-T360 2 T360Next-dev,2026-07-03,2026-09-08,dev,dev,fks,T360 2 T360Next,1,19.999999999999986
-fks-Test of SF-dev,2026-07-13,2026-09-11,dev,dev,fks,Test of SF,1,14.999999999999979
-gwdk-CTM to SF-dev,2026-07-24,2026-09-11,dev,dev,gwdk,CTM to SF,1,9.999999999999995
-fks-Real data 2 SF-dev,2026-07-10,2026-09-18,dev,dev,fks,Real data 2 SF,1,20.0
-tia-Test of MM-dev,2026-06-24,2026-09-21,dev,dev,tia,Test of MM,1,49.99999999999998
-gwdk-Test of SF-dev,2026-08-11,2026-09-23,dev,dev,gwdk,Test of SF,1,14.999999999999979
-fks-Test of MM-dev,2026-07-17,2026-09-24,dev,dev,fks,Test of MM,1,19.999999999999993
-fks-BI fac 2 T360Next-dev,2026-07-06,2026-09-25,dev,dev,fks,BI fac 2 T360Next,1,30.0
-fks-Test of other marts-dev,2026-07-24,2026-09-28,dev,dev,fks,Test of other marts,1,19.99999999999999
-gwaff-Test on SF mock-dev,2026-08-27,2026-09-28,dev,dev,gwaff,Test on SF mock,1,4.999999999999989
-gwaff-CTM to SF-dev,2026-08-21,2026-10-02,dev,dev,gwaff,CTM to SF,1,9.999999999999995
-gwno-Test on SF mock-test,2026-09-26,2026-10-02,test,test,gwno,Test on SF mock,1,5.0
-pms-Test on SF mock-dev,2026-09-02,2026-10-05,dev,dev,pms,Test on SF mock,1,5.0
-tosca-CTM-dev,2026-05-19,2026-10-08,dev,dev,tosca,CTM,1,90.0
-gwaff-Test of SF-dev,2026-09-02,2026-10-19,dev,dev,gwaff,Test of SF,1,14.999999999999979
-gwdk-Test of MM-dev,2026-08-14,2026-10-20,dev,dev,gwdk,Test of MM,1,29.999999999999986
-tosca-CTM to SF-dev,2026-05-21,2026-10-23,dev,dev,tosca,CTM to SF,1,100.0
-gwdk-Test of other marts-dev,2026-08-21,2026-10-23,dev,dev,gwdk,Test of other marts,1,29.99999999999997
-pms-Test of SF-dev,2026-09-11,2026-10-26,dev,dev,pms,Test of SF,1,14.999999999999984
-kn-Test on SF mock-test,2026-10-20,2026-10-27,test,test,kn,Test on SF mock,1,5.0
-gwdk-Real data 2 SF-dev,2026-07-30,2026-10-28,dev,dev,gwdk,Real data 2 SF,1,40.0
-tosca-Real data 2 SF-dev,2026-05-27,2026-11-03,dev,dev,tosca,Real data 2 SF,1,99.99999999999999
-gwno-CTM to SF-dev,2026-09-25,2026-11-09,dev,dev,gwno,CTM to SF,1,9.99999999999999
-gwaff-Real data 2 SF-dev,2026-08-28,2026-11-18,dev,dev,gwaff,Real data 2 SF,1,39.99999999999999
-tia-BI fac 2 T360Next-dev,2026-06-12,2026-11-19,dev,dev,tia,BI fac 2 T360Next,1,100.0
-gwaff-Test of MM-dev,2026-09-11,2026-11-19,dev,dev,gwaff,Test of MM,1,29.999999999999964
-gwno-Test of SF-dev,2026-10-02,2026-11-30,dev,dev,gwno,Test of SF,1,14.999999999999963
-kn-CTM to SF-dev,2026-10-19,2026-12-03,dev,dev,kn,CTM to SF,1,9.999999999999963
-gwaff-Test of other marts-dev,2026-09-23,2026-12-04,dev,dev,gwaff,Test of other marts,1,30.0
-gwno-Real data 2 SF-dev,2026-09-28,2026-12-23,dev,dev,gwno,Real data 2 SF,1,39.99999999999998
-kn-Test of SF-dev,2026-10-23,2026-12-24,dev,dev,kn,Test of SF,1,14.999999999999995
-pms-Test of MM-dev,2026-09-18,2026-12-28,dev,dev,pms,Test of MM,1,49.99999999999999
-pms-Test of other marts-dev,2026-09-21,2026-12-29,dev,dev,pms,Test of other marts,1,49.999999999999986
-gwno-Test of MM-dev,2026-10-05,2026-12-30,dev,dev,gwno,Test of MM,1,29.999999999999993
-gwno-Test of other marts-dev,2026-10-08,2026-12-31,dev,dev,gwno,Test of other marts,1,30.0
-kn-Test of MM-dev,2026-10-24,2027-01-15,dev,dev,kn,Test of MM,1,29.99999999999993
-kn-Real data 2 SF-dev,2026-10-21,2027-01-25,dev,dev,kn,Real data 2 SF,1,39.999999999999986
-pms-CTM-dev,2026-08-28,2027-01-28,dev,dev,pms,CTM,1,90.0
-kn-Test of other marts-dev,2026-10-26,2027-02-03,dev,dev,kn,Test of other marts,1,29.999999999999993
-pms-CTM to SF-dev,2026-08-31,2027-02-12,dev,dev,pms,CTM to SF,1,100.0
-pms-Real data 2 SF-dev,2026-09-08,2027-02-19,dev,dev,pms,Real data 2 SF,1,100.0
-gwdk-CTM-dev,2026-07-17,2027-03-26,dev,dev,gwdk,CTM,1,150.0
-gwno-CTM-dev,2026-09-24,2027-05-21,dev,dev,gwno,CTM,1,150.0
-kn-CTM-dev,2026-09-28,2027-06-01,dev,dev,kn,CTM,1,149.99999999999997
-gwaff-CTM-dev,2026-08-14,2027-06-04,dev,dev,gwaff,CTM,1,190.0
+prosit-Test of other marts-dev,2026-01-23,2026-04-06,dev,dev,prosit,Test of other marts,1,20.799999999999997
+bif-Test of MM-dev,2025-12-29,2026-04-10,dev,dev,bif,Test of MM,1,50.19999999999999
+hac-Real data 2 SF-dev,2026-02-12,2026-04-20,dev,dev,hac,Real data 2 SF,1,20.599999999999998
+hac-Test of SF-dev,2026-03-05,2026-04-21,dev,dev,hac,Test of SF,1,15.79999999999999
+bif-Test of other marts-dev,2026-01-12,2026-04-22,dev,dev,bif,Test of other marts,1,50.199999999999996
+axapta-Test on SF mock-dev,2026-03-25,2026-04-29,dev,dev,axapta,Test on SF mock,1,5.599999999999999
+bif-Real data 2 SF-dev,2025-12-02,2026-05-06,dev,dev,bif,Real data 2 SF,1,100.0
+hac-Test of MM-dev,2026-03-10,2026-05-06,dev,dev,hac,Test of MM,1,20.399999999999995
+hac-Test of other marts-dev,2026-03-20,2026-05-13,dev,dev,hac,Test of other marts,1,20.599999999999994
+axapta-Test of SF-dev,2026-04-10,2026-05-22,dev,dev,axapta,Test of SF,1,14.999999999999993
+grus-T360 2 T360Next-dev,2026-04-22,2026-06-15,dev,dev,grus,T360 2 T360Next,1,20.199999999999992
+grus-Test on SF mock-dev,2026-05-06,2026-06-26,dev,dev,grus,Test on SF mock,1,5.399999999999989
+grus-BI fac 2 T360Next-dev,2026-04-29,2026-07-14,dev,dev,grus,BI fac 2 T360Next,1,30.59999999999998
+axapta-Test of MM-dev,2026-04-20,2026-07-15,dev,dev,axapta,Test of MM,1,50.0
+axapta-Test of other marts-dev,2026-04-21,2026-07-17,dev,dev,axapta,Test of other marts,1,49.99999999999999
+warranty-Test on SF mock-dev,2026-05-22,2026-07-23,dev,dev,warranty,Test on SF mock,1,5.1999999999999975
+axapta-CTM-dev,2026-02-12,2026-07-28,dev,dev,axapta,CTM,1,90.19999999999999
+warranty-T360 2 T360Next-dev,2026-05-06,2026-07-31,dev,dev,warranty,T360 2 T360Next,1,20.199999999999985
+warranty-Test of SF-dev,2026-06-26,2026-08-17,dev,dev,warranty,Test of SF,1,15.799999999999997
+warranty-Real data 2 SF-dev,2026-06-15,2026-08-18,dev,dev,warranty,Real data 2 SF,1,20.399999999999995
+warranty-BI fac 2 T360Next-dev,2026-05-13,2026-08-26,dev,dev,warranty,BI fac 2 T360Next,1,30.599999999999998
+warranty-Test of MM-dev,2026-07-14,2026-08-27,dev,dev,warranty,Test of MM,1,20.799999999999997
+warranty-Test of other marts-dev,2026-07-15,2026-09-04,dev,dev,warranty,Test of other marts,1,20.599999999999987
+axapta-CTM to SF-dev,2026-03-23,2026-09-08,dev,dev,axapta,CTM to SF,1,100.6
+axapta-Real data 2 SF-dev,2026-04-06,2026-09-11,dev,dev,axapta,Real data 2 SF,1,100.0
+grus-Test of SF-dev,2026-07-23,2026-09-11,dev,dev,grus,Test of SF,1,15.599999999999993
+grus-Real data 2 SF-dev,2026-07-17,2026-09-15,dev,dev,grus,Real data 2 SF,1,20.599999999999998
+motor-Test on SF mock-dev,2026-08-26,2026-09-18,dev,dev,motor,Test on SF mock,1,5.0
+grus-Test of MM-dev,2026-07-28,2026-09-24,dev,dev,grus,Test of MM,1,20.599999999999998
+grus-Test of other marts-dev,2026-07-31,2026-09-29,dev,dev,grus,Test of other marts,1,20.599999999999994
+motor-T360 2 T360Next-dev,2026-08-17,2026-10-05,dev,dev,motor,T360 2 T360Next,1,20.199999999999996
+motor-Test of SF-dev,2026-09-04,2026-10-08,dev,dev,motor,Test of SF,1,15.799999999999997
+motor-Real data 2 SF-dev,2026-08-27,2026-10-12,dev,dev,motor,Real data 2 SF,1,20.199999999999996
+gwse-Test on SF mock-dev,2026-09-18,2026-10-16,dev,dev,gwse,Test on SF mock,1,5.1999999999999975
+motor-Test of MM-dev,2026-09-08,2026-10-20,dev,dev,motor,Test of MM,1,20.399999999999995
+motor-BI fac 2 T360Next-dev,2026-08-18,2026-10-22,dev,dev,motor,BI fac 2 T360Next,1,30.799999999999997
+motor-Test of other marts-dev,2026-09-11,2026-10-26,dev,dev,motor,Test of other marts,1,20.799999999999997
+gwse-T360 2 T360Next-dev,2026-09-11,2026-10-29,dev,dev,gwse,T360 2 T360Next,1,20.399999999999995
+gwse-Test of SF-dev,2026-09-29,2026-11-09,dev,dev,gwse,Test of SF,1,15.199999999999998
+gwse-Real data 2 SF-dev,2026-09-24,2026-11-11,dev,dev,gwse,Real data 2 SF,1,20.399999999999995
+clan-Test on SF mock-dev,2026-10-20,2026-11-17,dev,dev,clan,Test on SF mock,1,5.1999999999999975
+gwse-BI fac 2 T360Next-dev,2026-09-15,2026-11-18,dev,dev,gwse,BI fac 2 T360Next,1,30.799999999999997
+gwse-Test of MM-dev,2026-10-05,2026-11-18,dev,dev,gwse,Test of MM,1,20.199999999999996
+gwse-Test of other marts-dev,2026-10-08,2026-11-20,dev,dev,gwse,Test of other marts,1,20.199999999999996
+clan-T360 2 T360Next-dev,2026-10-12,2026-11-25,dev,dev,clan,T360 2 T360Next,1,20.799999999999997
+clan-Test of SF-dev,2026-10-26,2026-12-09,dev,dev,clan,Test of SF,1,15.599999999999998
+clan-Real data 2 SF-dev,2026-10-22,2026-12-11,dev,dev,clan,Real data 2 SF,1,20.399999999999995
+clan-BI fac 2 T360Next-dev,2026-10-16,2026-12-15,dev,dev,clan,BI fac 2 T360Next,1,30.199999999999992
+clan-Test of MM-dev,2026-10-29,2026-12-16,dev,dev,clan,Test of MM,1,20.0
+clan-Test of other marts-dev,2026-11-09,2026-12-17,dev,dev,clan,Test of other marts,1,20.199999999999996
+tosca-Test on SF mock-dev,2026-11-18,2026-12-17,dev,dev,tosca,Test on SF mock,1,5.1999999999999975
+mdb-Test on SF mock-dev,2026-11-25,2026-12-24,dev,dev,mdb,Test on SF mock,1,5.599999999999999
+mdb-T360 2 T360Next-dev,2026-11-18,2027-01-11,dev,dev,mdb,T360 2 T360Next,1,20.199999999999996
+mdb-Test of SF-dev,2026-12-11,2027-01-11,dev,dev,mdb,Test of SF,1,14.999999999999993
+mdb-Real data 2 SF-dev,2026-12-09,2027-01-17,dev,dev,mdb,Real data 2 SF,1,21.0
+mdb-BI fac 2 T360Next-dev,2026-11-20,2027-01-27,dev,dev,mdb,BI fac 2 T360Next,1,30.599999999999998
+mdb-Test of MM-dev,2026-12-15,2027-01-28,dev,dev,mdb,Test of MM,1,20.199999999999985
+mdb-Test of other marts-dev,2026-12-16,2027-02-08,dev,dev,mdb,Test of other marts,1,20.0
+tia-Test on SF mock-dev,2027-01-11,2027-02-09,dev,dev,tia,Test on SF mock,1,5.199999999999991
+tosca-Test of SF-dev,2027-01-11,2027-03-02,dev,dev,tosca,Test of SF,1,15.599999999999998
+tia-T360 2 T360Next-dev,2026-12-17,2027-03-25,dev,dev,tia,T360 2 T360Next,1,45.79999999999999
+tosca-CTM-dev,2026-11-11,2027-03-30,dev,dev,tosca,CTM,1,90.8
+tia-Test of SF-dev,2027-01-27,2027-04-01,dev,dev,tia,Test of SF,1,15.199999999999978
+tia-Real data 2 SF-dev,2027-01-17,2027-04-14,dev,dev,tia,Real data 2 SF,1,39.999999999999986
+tosca-CTM to SF-dev,2026-11-17,2027-04-20,dev,dev,tosca,CTM to SF,1,99.99999999999999
+tia-Test of other marts-dev,2027-02-08,2027-05-12,dev,dev,tia,Test of other marts,1,30.199999999999996
+fks-T360 2 T360Next-dev,2027-03-25,2027-05-27,dev,dev,fks,T360 2 T360Next,1,20.59999999999998
+tosca-Real data 2 SF-dev,2026-12-17,2027-06-02,dev,dev,tosca,Real data 2 SF,1,100.39999999999999
+tia-Test of MM-dev,2027-01-28,2027-06-07,dev,dev,tia,Test of MM,1,50.8
+fks-Test on SF mock-dev,2027-04-01,2027-06-07,dev,dev,fks,Test on SF mock,1,5.399999999999995
+tosca-Test of MM-dev,2027-02-09,2027-06-16,dev,dev,tosca,Test of MM,1,50.39999999999999
+tia-BI fac 2 T360Next-dev,2026-12-24,2027-06-17,dev,dev,tia,BI fac 2 T360Next,1,100.6
+tosca-Test of other marts-dev,2027-03-02,2027-06-25,dev,dev,tosca,Test of other marts,1,50.39999999999999
+fks-Test of SF-dev,2027-04-20,2027-06-28,dev,dev,fks,Test of SF,1,15.0
+fks-BI fac 2 T360Next-dev,2027-03-30,2027-06-30,dev,dev,fks,BI fac 2 T360Next,1,30.599999999999987
+fks-Real data 2 SF-dev,2027-04-14,2027-07-02,dev,dev,fks,Real data 2 SF,1,20.799999999999997
+fks-Test of MM-dev,2027-05-12,2027-07-08,dev,dev,fks,Test of MM,1,20.199999999999992
+gwdk-CTM to SF-dev,2027-06-07,2027-07-12,dev,dev,gwdk,CTM to SF,1,10.599999999999998
+gwaff-Test on SF mock-dev,2027-06-17,2027-07-13,dev,dev,gwaff,Test on SF mock,1,5.399999999999995
+fks-Test of other marts-dev,2027-05-27,2027-07-15,dev,dev,fks,Test of other marts,1,20.599999999999998
+gwaff-CTM to SF-dev,2027-06-16,2027-07-15,dev,dev,gwaff,CTM to SF,1,10.199999999999998
+gwaff-Test of SF-dev,2027-06-28,2027-08-03,dev,dev,gwaff,Test of SF,1,15.599999999999998
+gwaff-Test of MM-dev,2027-06-30,2027-08-25,dev,dev,gwaff,Test of MM,1,30.199999999999996
+gwaff-Test of other marts-dev,2027-07-02,2027-08-26,dev,dev,gwaff,Test of other marts,1,30.0
+pms-Test on SF mock-dev,2027-07-13,2027-09-02,dev,dev,pms,Test on SF mock,1,5.599999999999999
+gwaff-Real data 2 SF-dev,2027-06-25,2027-09-03,dev,dev,gwaff,Real data 2 SF,1,40.199999999999996
+pms-Test of SF-dev,2027-08-03,2027-10-08,dev,dev,pms,Test of SF,1,14.999999999999961
+pms-CTM-dev,2027-07-08,2027-11-26,dev,dev,pms,CTM,1,90.79999999999998
+pms-CTM to SF-dev,2027-07-12,2027-12-30,dev,dev,pms,CTM to SF,1,100.59999999999998
+pms-Test of MM-dev,2027-08-25,2028-01-06,dev,dev,pms,Test of MM,1,49.99999999999994
+pms-Real data 2 SF-dev,2027-07-15,2028-01-17,dev,dev,pms,Real data 2 SF,1,100.0
+gwno-CTM to SF-dev,2027-09-02,2028-01-17,dev,dev,gwno,CTM to SF,1,9.999999999999993
+gwdk-CTM-dev,2027-06-02,2028-01-18,dev,dev,gwdk,CTM,1,150.6
+kn-CTM to SF-dev,2027-10-08,2028-01-31,dev,dev,kn,CTM to SF,1,10.0
+pms-Test of other marts-dev,2027-08-26,2028-02-18,dev,dev,pms,Test of other marts,1,50.39999999999996
+gwaff-CTM-dev,2027-06-07,2028-03-21,dev,dev,gwaff,CTM,1,190.2
+gwno-CTM-dev,2027-07-15,2028-03-31,dev,dev,gwno,CTM,1,150.6
+kn-CTM-dev,2027-09-03,2028-08-08,dev,dev,kn,CTM,1,150.2
