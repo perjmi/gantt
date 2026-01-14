@@ -175,6 +175,12 @@ ressources = [
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer16','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer17','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer18','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer19','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer20','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer21','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer22','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer23','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer24','onboardingday':180},
     {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1','onboardingday':0},
     {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2','onboardingday':0},
     {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3','onboardingday':0},
@@ -433,7 +439,7 @@ def convert_tasks(tasks):
             })
     return result
 
-def plottasksonproject(df, save_as_png=False, filename="gantt_project_tasks.png"):
+def plottasksonproject(df, save_as_png=False, filename="gantt_project_tasks.png", xaxis_range=None):
     """Plot the Gantt chart for the project tasks DataFrame"""
     # Scale FTE so bars have height proportional to FTE
     max_fte = df["FTE"].max()
@@ -466,6 +472,9 @@ def plottasksonproject(df, save_as_png=False, filename="gantt_project_tasks.png"
         width=1200,
         height=800
     )
+
+    if xaxis_range:
+        fig.update_xaxes(range=xaxis_range)
     
     if save_as_png:
         fig.write_image(filename)
@@ -473,7 +482,7 @@ def plottasksonproject(df, save_as_png=False, filename="gantt_project_tasks.png"
     else:
         fig.show()
 
-def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.png"):
+def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.png", xaxis_range=None):
     """
     Plot simplified Gantt chart: one box per system from start to finish.
     Box height × length represents total workdays.
@@ -581,6 +590,9 @@ def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.pn
         width=1200,
         height=800
     )
+
+    if xaxis_range:
+        fig.update_xaxes(range=xaxis_range)
     
     if save_as_png:
         fig.write_image(filename)
@@ -588,7 +600,7 @@ def plot_system_summary(df, save_as_png=False, filename="gantt_system_summary.pn
     else:
         fig.show()
 
-def plot_milestone_progress(df, save_as_png=False, filename="gantt_milestone_progress.png"):
+def plot_milestone_progress(df, save_as_png=False, filename="gantt_milestone_progress.png", xaxis_range=None):
     """
     Plot a line chart showing cumulative number of milestones completed over time.
     A milestone is considered complete when it finishes.
@@ -633,6 +645,9 @@ def plot_milestone_progress(df, save_as_png=False, filename="gantt_milestone_pro
         width=1200,
         height=800
     )
+
+    if xaxis_range:
+        fig.update_xaxes(range=xaxis_range)
     
     if save_as_png:
         fig.write_image(filename)
@@ -640,11 +655,11 @@ def plot_milestone_progress(df, save_as_png=False, filename="gantt_milestone_pro
     else:
         fig.show()
 
-def project():
+def project(xaxis_range=None):
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=5)
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=6)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
@@ -664,9 +679,9 @@ def project():
     print("2. tasks_converted.csv - Converted tasks grouped by System/ResourceType/Milestone")
     
     # Save all three charts as PNG files
-    plottasksonproject(df_converted, save_as_png=True, filename="gantt_project_tasks.png")
-    plot_system_summary(df, save_as_png=True, filename="gantt_system_summary.png")
-    plot_milestone_progress(df, save_as_png=True, filename="gantt_milestone_progress.png")
+    plottasksonproject(df_converted, save_as_png=True, filename="gantt_project_tasks.png", xaxis_range=xaxis_range)
+    plot_system_summary(df, save_as_png=True, filename="gantt_system_summary.png", xaxis_range=xaxis_range)
+    plot_milestone_progress(df, save_as_png=True, filename="gantt_milestone_progress.png", xaxis_range=xaxis_range)
     
     print("\nAll three Gantt charts have been saved as PNG files:")
     print("1. gantt_project_tasks.png - Detailed project tasks with milestones")
