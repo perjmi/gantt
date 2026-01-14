@@ -9,19 +9,19 @@ systems = [{'name': 'bif', 'systype': 'general', 'country': 'all', 'complexity':
 systems.append({'name': 'hac', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'sol', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'prosit', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
-systems.append({'name':'axapta','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
+systems.append({'name':'axapta','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option3'})
 systems.append({'name': 'grus', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'warranty', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'motor', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'poor', 'method': 'option1'})
 systems.append({'name': 'gwse', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'clan', 'systype': 'claims', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
-systems.append({'name':'tosca','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option2'})
+systems.append({'name':'tosca','systype':'policy','country':'dk','complexity':'hard','quality':'medium','method':'option3'})
 systems.append({'name': 'mdb', 'systype': 'customer', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'tia', 'systype': 'policy', 'country': 'dk', 'complexity': 'medium', 'quality': 'medium', 'method': 'option1'})
 systems.append({'name': 'fks', 'systype': 'customer', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
 systems.append({'name': 'gwdk', 'systype': 'claims', 'country': 'dk', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 systems.append({'name':'gwaff','systype':'policy','country':'dk','complexity':'medium','quality':'good','method':'option2'})
-systems.append({'name':'pms','systype':'policy','country':'no','complexity':'hard','quality':'medium','method':'option2'})
+systems.append({'name':'pms','systype':'policy','country':'no','complexity':'hard','quality':'medium','method':'option3'})
 systems.append({'name': 'gwno', 'systype': 'claims', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 systems.append({'name': 'kn', 'systype': 'customer', 'country': 'no', 'complexity': 'small', 'quality': 'good', 'method': 'option2'})
 
@@ -55,6 +55,7 @@ systemmilestones.append(
         ]
     }
 )
+
 systemmilestones.append(
    {
         'complexity': 'hard',
@@ -175,17 +176,19 @@ ressources = [
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer16','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer17','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer18','onboardingday':90},
-    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer19','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer19','onboardingday':90},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer20','onboardingday':180},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer21','onboardingday':180},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer22','onboardingday':180},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer23','onboardingday':180},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer24','onboardingday':180},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer25','onboardingday':180},
     {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1','onboardingday':0},
     {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2','onboardingday':0},
     {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3','onboardingday':0},
     {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester4','onboardingday':90},
-    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester5','onboardingday':90}
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester5','onboardingday':90},
+    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester6','onboardingday':180}
 ]
 
 def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in_progress=3):
@@ -659,12 +662,14 @@ def project(xaxis_range=None):
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=6)
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=7)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
     print("\nOriginal FTE values:", df["FTE"].unique())
-    
+    for i in range(df.shape[0]):
+        print(f"Row {i} - Task: {df.at[i, 'Task']}, FTE: {df.at[i, 'FTE']}")
+        
     convert_tasksed = convert_tasks(tasks)
     df_converted = pd.DataFrame(convert_tasksed)
     print("\nConverted tasks DataFrame:")
