@@ -4,6 +4,7 @@ Gantt Charts for Project Planning
 
 import plotly.express as px
 import pandas as pd
+from datetime import timedelta
 
 systems = [{'name': 'bif', 'systype': 'general', 'country': 'all', 'complexity': 'hard', 'quality': 'good', 'method': 'option3'}]
 systems.append({'name': 'hac', 'systype': 'policy', 'country': 'se', 'complexity': 'small', 'quality': 'good', 'method': 'option1'})
@@ -192,7 +193,7 @@ ressources = [
 ]
 
 
-ressources = [
+ressources1 = [
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
     {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
@@ -456,6 +457,225 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
 
     return tasks
 
+def saturatedtasks(projectstarttime, systems, systemmilestones, ressources, max_systems_in_progress=3):
+    """
+    Generate tasks using a saturated capacity model.
+    """
+    # Helper functions
+    def parse_date(d):
+        return pd.to_datetime(d)
+
+    def is_workday(date):
+        return date.weekday() < 5
+
+    project_start_date = parse_date(projectstarttime)
+    
+    # 1. Prepare Undone Tasks (Queues per system)
+    # We need to maintain order of milestones per system
+    undonetasks = {} # key: system_name, value: list of milestones
+    system_map = {s['name']: s for s in systems}
+    
+    for system in systems:
+        ms_set = None
+        for ms in systemmilestones:
+            if ms['complexity'] == system['complexity'] and ms['method'] == system['method']:
+                ms_set = ms
+                break
+        if ms_set:
+            # Create task objects from milestones
+            tasks = []
+            for ms in ms_set['milestones']:
+                tasks.append({
+                    'System': system['name'],
+                    'Milestone': ms['name'],
+                    'duration': ms['duration'], # minimum calendar duration
+                    'workdays_needed': ms['workdays'], # total FTE-days needed
+                    'ftetype': ms['ftetype'],
+                    'workeddays': 0.0,
+                    'assigned_fte_count': 0.0,
+                    'Start': None,
+                    'Finish': None
+                })
+            undonetasks[system['name']] = tasks
+
+    # 2. Initialize Lists
+    opentasks = []
+    donetasks = []
+    
+    # Track when resources become available (onboarding)
+    # Group resources by type for count availability
+    resources_by_type = {}
+    for r in ressources:
+        rtype = r['ftetype']
+        if rtype not in resources_by_type:
+            resources_by_type[rtype] = []
+        resources_by_type[rtype].append(r)
+
+    current_date = project_start_date
+    systems_in_progress = set()
+    
+    # Loop until all work is done
+    while True:
+        # Check if we are done: no open tasks and no undone tasks
+        if not opentasks and not any(undonetasks.values()):
+            break
+
+        # Calculate FTEs available on this calendar day
+        # Capacity is sum of availability of active resources
+        # Active resource: current_date >= start + onboarding
+        daily_capacity = {} # type -> total availability
+        available_dev_count = {} # type -> count of active resources
+        
+        is_wkday = is_workday(current_date)
+        
+        for rtype, rlist in resources_by_type.items():
+            cap = 0.0
+            count = 0
+            for r in rlist:
+                onboarding = r.get('onboardingday', 0)
+                res_start = project_start_date + timedelta(days=onboarding)
+                if current_date >= res_start:
+                    if is_wkday:
+                        cap += r['availability']
+                    count += 1
+            daily_capacity[rtype] = cap
+            available_dev_count[rtype] = count
+
+        # usedcapacity per type
+        usedcapacity = {} # type -> used amount
+        for rtype in daily_capacity:
+            usedcapacity[rtype] = 0.0
+        
+        # Process open tasks
+        tasks_completed_today = []
+        
+        for task in opentasks:
+            rtype = task['ftetype']
+            
+            # Update workeddays
+            # fte's needed for the day: we assume task.assigned_fte_count (which we set to 1.0 or similar)
+            # Or simplified: a task tries to consume 1 FTE worth of effort if available?
+            # User said: "update the workeddays with min(capacityof day - usedcapacity,fte's needed for the day)"
+            # We will use assigned_fte_count as the demand.
+            
+            demand = task['assigned_fte_count']
+            available = daily_capacity.get(rtype, 0) - usedcapacity.get(rtype, 0)
+            allocation = max(0.0, min(available, demand))
+            
+            task['workeddays'] += allocation
+            usedcapacity[rtype] = usedcapacity.get(rtype, 0) + allocation
+            
+            # Check completion
+            # 1. workdays >= workdays needed
+            # 2. calendartime >= starttime + duration
+            # calendartime is current duration since start
+            # Wait, Start is when task started.
+            if task['Start'] is not None:
+                start_date = parse_date(task['Start'])
+                calendar_duration = (current_date - start_date).days + 1 # +1 to include today? 
+                # "calendartime >= starttime+duration". 
+                # If start is D, duration 1. On D, time is D. D >= D+1? No.
+                # If duration is 1 day, it should finish on same day if work is done?
+                # Usually duration 1 means 1 day span.
+                # Let's use simple diff.
+                time_passed = (current_date - start_date).days + 1
+                
+                if task['workeddays'] >= task['workdays_needed'] - 0.001 and time_passed >= task['duration']:
+                    task['Finish'] = current_date.strftime('%Y-%m-%d')
+                    tasks_completed_today.append(task)
+        
+        # Handle completed tasks
+        for task in tasks_completed_today:
+            opentasks.remove(task)
+            donetasks.append(task)
+            
+            # Check if system has more tasks
+            sys_name = task['System']
+            if not undonetasks.get(sys_name):
+                # System finished completely
+                if sys_name in systems_in_progress:
+                    systems_in_progress.remove(sys_name)
+        
+        # Transfer new tasks
+        # "if usedcapacity<available capacity of the day"
+        # Actually logic says: "transfer a new task... if the number of used dev's is less than the available one"
+        # I will treat "used dev's" as number of OPEN tasks of that type.
+        
+        # Identify candidates
+        # 1. Next milestone for systems already in progress (High priority)
+        # 2. First milestone for new systems (if under max_systems_in_progress)
+        
+        # Process in-progress systems first
+        for sys_name in list(systems_in_progress):
+            if undonetasks.get(sys_name):
+                candidate = undonetasks[sys_name][0]
+                rtype = candidate['ftetype']
+                used_devs = len([t for t in opentasks if t['ftetype'] == rtype])
+                available_devs = available_dev_count.get(rtype, 0)
+                
+                if used_devs < available_devs:
+                    # Transfer
+                    task = undonetasks[sys_name].pop(0)
+                    task['Start'] = current_date.strftime('%Y-%m-%d')
+                    task['assigned_fte_count'] = 1.0
+                    opentasks.append(task)
+                    # Already in progress
+        
+        # Process new systems
+        # Only if we have slots in systems_in_progress
+        # Loop through systems to find candidates, but check limit before starting each
+        for system in systems:
+            sys_name = system['name']
+            if sys_name not in systems_in_progress and undonetasks.get(sys_name):
+                # Check limit
+                if len(systems_in_progress) >= max_systems_in_progress:
+                    break # No more new systems allowed right now
+                
+                candidate = undonetasks[sys_name][0]
+                rtype = candidate['ftetype']
+                used_devs = len([t for t in opentasks if t['ftetype'] == rtype])
+                available_devs = available_dev_count.get(rtype, 0)
+                
+                if used_devs < available_devs:
+                    # Transfer
+                    task = undonetasks[sys_name].pop(0)
+                    task['Start'] = current_date.strftime('%Y-%m-%d')
+                    task['assigned_fte_count'] = 1.0
+                    opentasks.append(task)
+                    systems_in_progress.add(sys_name)
+        
+        # Advance day
+        current_date += timedelta(days=1)
+        
+        # Safety break
+        if (current_date - project_start_date).days > 365*5:
+            print("Stopping after 5 years")
+            break
+
+    # Export
+    # Format: dict with Task, Start, Finish.
+    # plus other fields from createtasks
+    export_tasks = []
+    for t in donetasks:
+        # Construct task name like in createtasks
+        # System-Milestone-Resource
+        # But we don't have specific resource name. We can use "SaturatedResource" or Type.
+        taskname = f"{t['System']}-{t['Milestone']}-{t['ftetype']}"
+        
+        export_tasks.append({
+            'Task': taskname,
+            'Start': t['Start'],
+            'Finish': t['Finish'],
+            'Resource': t['ftetype'], # Generic
+            'ResourceType': t['ftetype'],
+            'System': t['System'],
+            'Milestone': t['Milestone'],
+            'FTE': 1, # As requested?
+            'EffectivePersonDays': t['workeddays'] # roughly
+        })
+        
+    return export_tasks
+
 def convert_tasks(tasks):
     """
     Convert tasks into intervals grouped by System, ResourceType, and Milestone.
@@ -715,7 +935,8 @@ def project(xaxis_range=None):
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
+    #tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
+    tasks = saturatedtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
