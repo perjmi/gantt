@@ -32,9 +32,9 @@ systemmilestones = [
         'milestones': [
             {'name': 'T360 2 T360Next', 'duration': 15,'workdays':20,'ftetype':'dev'},
             {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':30,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':20,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':20,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':20,'ftetype':'dev'},
             {'name': 'Test of other marts', 'duration': 30,'workdays':20,'ftetype':'dev'}
         ]
@@ -47,11 +47,11 @@ systemmilestones.append(
         'milestones': [
             {'name': 'T360 2 T360Next', 'duration': 15,'workdays':45,'ftetype':'dev'},
             {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':100,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
+            {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
     }
 )
@@ -63,11 +63,11 @@ systemmilestones.append(
         'milestones': [
             {'name': 'T360 2 T360Next', 'duration': 15,'workdays':45,'ftetype':'dev'},
             {'name': 'BI fac 2 T360Next', 'duration': 42,'workdays':100,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
-            {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
+            {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
     })
 
@@ -80,7 +80,7 @@ systemmilestones.append(
             {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
             {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
             {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
@@ -94,9 +94,9 @@ systemmilestones.append(
         'milestones': [
             {'name': 'CTM', 'duration': 40,'workdays':190,'ftetype':'dev'},
             {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
             {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
@@ -110,9 +110,9 @@ systemmilestones.append(
         'milestones': [
             {'name': 'CTM', 'duration': 40,'workdays':250,'ftetype':'dev'},
             {'name': 'CTM to SF', 'duration': 5,'workdays':10,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
             {'name': 'Real data 2 SF', 'duration': 40,'workdays':40,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':30,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':30,'ftetype':'dev'},
             {'name': 'Test of other marts', 'duration': 30,'workdays':30,'ftetype':'dev'}
         ]
@@ -127,9 +127,9 @@ systemmilestones.append(
         'milestones': [
             {'name': 'CTM', 'duration': 40,'workdays':90,'ftetype':'dev'},
             {'name': 'CTM to SF', 'duration': 20,'workdays':100,'ftetype':'dev'},
-            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'test'},
-            {'name': 'Real data 2 SF', 'duration': 40,'workdays':200,'ftetype':'dev'},
-            {'name': 'Test of SF', 'duration': 10,'workdays':50,'ftetype':'dev'},
+            {'name': 'Test on SF mock', 'duration': 1,'workdays':5,'ftetype':'dev'},
+            {'name': 'Real data 2 SF', 'duration': 40,'workdays':100,'ftetype':'dev'},
+            {'name': 'Test of SF', 'duration': 10,'workdays':15,'ftetype':'dev'},
             {'name': 'Test of MM', 'duration': 30,'workdays':50,'ftetype':'dev'},
             {'name': 'Test of other marts', 'duration': 30,'workdays':50,'ftetype':'dev'}
         ]
@@ -192,7 +192,7 @@ ressources = [
 ]
 
 
-ressources2 = [
+ressources = [
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer1','onboardingday':0},
     {'ftetype':'dev','unitcostprday':1000,'availability':0.6,'ressourcename':'Developer2','onboardingday':0},
     {'ftetype':'dev','unitcostprday':950,'availability':0.6,'ressourcename':'Developer3','onboardingday':0},
@@ -208,9 +208,9 @@ ressources2 = [
     {'ftetype':'dev','unitcostprday':980,'availability':0.6,'ressourcename':'Developer13','onboardingday':0},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer14','onboardingday':0},
     {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer15','onboardingday':90},
-    {'ftetype':'test','unitcostprday':800,'availability':0.6,'ressourcename':'Tester1','onboardingday':0},
-    {'ftetype':'test','unitcostprday':820,'availability':0.6,'ressourcename':'Tester2','onboardingday':0},
-    {'ftetype':'test','unitcostprday':780,'availability':0.6,'ressourcename':'Tester3','onboardingday':0}
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer16','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer17','onboardingday':90},
+    {'ftetype':'dev','unitcostprday':1020,'availability':0.6,'ressourcename':'Developer18','onboardingday':90}
 ]
 
 def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in_progress=3):
@@ -292,9 +292,13 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
             system_milestone_finish[system_name] = parse_date(starttime)
     
     # Track which systems are currently in progress (have started but not finished all milestones)
-    systems_in_progress = set()
     systems_completed = set()
+    processed_completions = set()
     system_start_time = {}  # Track when each system first started
+    
+    # Track start time constraints for systems based on slot availability
+    system_start_constraints = {}
+    slot_free_times = [parse_date(starttime)] * max_systems_in_progress
 
     while True:
         # Find candidate systems for next milestone assignment
@@ -304,23 +308,45 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
                 systems_completed.add(system_name)
                 continue  # This system is done
             candidate_systems.append(system_name)
+            
+        # Release slots for newly completed systems
+        for system_name in systems_completed:
+            if system_name not in processed_completions:
+                finish_time = system_milestone_finish[system_name]
+                slot_free_times.append(finish_time)
+                processed_completions.add(system_name)
 
-        # Update systems_in_progress: add any system that has started but not finished
-        systems_in_progress = set([
-            name for name in system_queues
-            if name not in systems_completed and system_queues[name]['current_index'] > 0
-        ])
+        # Assign slots to new systems if available
+        # Candidates for new slots are those that haven't been assigned a slot yet
+        not_started_no_slot = [
+            name for name in candidate_systems 
+            if name not in system_start_constraints
+        ]
+        
+        # Sort slot_free_times to pick earliest available slots
+        slot_free_times.sort()
+        
+        while slot_free_times and not_started_no_slot:
+            system_name = not_started_no_slot.pop(0)
+            free_time = slot_free_times.pop(0)
+            system_start_constraints[system_name] = free_time
 
-        # If fewer than max_systems_in_progress systems are in progress, allow new systems to start
-        available_slots = max_systems_in_progress - len(systems_in_progress)
-        # Prioritize continuing work on systems already in progress, ordered by start time (oldest first)
-        prioritized_systems = sorted(
-            systems_in_progress, 
-            key=lambda name: system_start_time.get(name, parse_date(starttime))
-        )
-        # If slots remain, add systems that have not started yet
-        not_started = [name for name in candidate_systems if name not in systems_in_progress and name not in systems_completed]
-        prioritized_systems += not_started[:available_slots]
+        # Prioritize systems that have a slot assigned
+        prioritized_systems = [
+            name for name in candidate_systems 
+            if name in system_start_constraints
+        ]
+        
+        # Sort: 1. Already started systems first, 2. Start time / Constraint time
+        def get_sort_key(name):
+            if name in system_start_time:
+                return system_start_time[name]
+            return system_start_constraints.get(name, parse_date(starttime))
+            
+        prioritized_systems.sort(key=lambda name: (
+            0 if system_queues[name]['current_index'] > 0 else 1,
+            get_sort_key(name)
+        ))
 
         # Try to assign milestones for all prioritized systems
         # Track which resources have been used in this iteration
@@ -360,6 +386,11 @@ def createtasks(starttime, systems, systemmilestones, ressources, max_systems_in
 
             earliest_resource_time = max([resource_availability[r['ressourcename']] for r in assigned])
             milestone_can_start = max(prev_milestone_finish, earliest_resource_time)
+            
+            # Enforce system start constraint for the first milestone
+            if queue_info['current_index'] == 0:
+                constraint = system_start_constraints.get(system_name, parse_date(starttime))
+                milestone_can_start = max(milestone_can_start, constraint)
             
             # Ensure milestone starts on a workday
             milestone_start = next_workday(milestone_can_start)
@@ -684,7 +715,7 @@ def project(xaxis_range=None):
     """Generate and display a Gantt chart for the defined project"""
     print("Creating project Gantt chart...")
     # Limit to 3 systems in progress at any time
-    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=7)
+    tasks = createtasks('2025-11-04', systems, systemmilestones, ressources, max_systems_in_progress=4)
     df = pd.DataFrame(tasks)
     print("\nOriginal tasks DataFrame:")
     print(df)
